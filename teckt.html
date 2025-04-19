@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teckt /The Grand Egyptian Museum</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Papyrus&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/teckt.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a class="logo" href="./index.html">
+            <img
+              src="./image/photo_2025-03-18_21-31-54-removebg-preview.png"
+              width="200px"
+              alt="Logo"
+            />
+          </a>
+          <i class="fa-solid fa-bars toggle-menu"></i>
+          <ul class="nav-links">
+            <li class="dropdown">
+              <a href="#" data-translate="about">About</a>
+              <button class="dropdown-toggle">▼</button>
+              <ul class="dropdown-menu">
+                <li><a href="#" data-translate="our_story">Our Story</a></li>
+                <li>
+                  <a href="#" data-translate="mission_vision"
+                    >Mission & Vision</a
+                  >
+                </li>
+                <li><a href="#" data-translate="team">Team</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" data-translate="tours">Tourist</a>
+              <button class="dropdown-toggle">▼</button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="Tour.html" data-translate="popular_tours"
+                    >Popular Tours</a
+                  >
+                </li>
+                <li>
+                  <a href="./teckt.html" data-translate="book_trip"
+                    >Book a Trip</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../The Grand Egyptian Museum/guidelines.html"
+                    data-translate="guidelines"
+                    >guidelines</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown egypt-text">
+              <a href="./index.html" target="_blank" data-translate="home"
+                >Home</a
+              >
+            </li>
+
+            <li class="dropdown">
+              <a href="#" data-translate="history">HISTORY</a>
+              <button class="dropdown-toggle">▼</button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="./date.html" data-translate="museum_history"
+                    >Museum history</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./The great kings of Egypt.html"
+                    data-translate="great_kings"
+                    >The great kings of Egypt</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <div class="language-switch">
+              <button class="lang-btn" data-lang="en">English</button>
+              <button class="lang-btn" data-lang="ar">العربية</button>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay">
+        <h1 data-translate="book_tickets">Book tickets</h1>
+      </div>
+      <div
+        class="scroll-down"
+        onclick="document.querySelector('#tour-section').scrollIntoView({ behavior: 'smooth' });"
+      >
+        <i class="fa-solid fa-angles-down"></i>
+      </div>
+    </section>
+
+    <!-- Ticket Section -->
+
+    <section class="teckt" id="tour-section">
+      <div class="box-cont">
+        <div class="box1">
+          <section class="booking-section">
+            <h2 data-translate="book_your_ticket">Book Your Ticket</h2>
+            <form action="#" method="POST">
+              <label for="name" data-translate="full_name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required
+              />
+
+              <label for="email" data-translate="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+
+              <label for="phone" data-translate="phone_number"
+                >Phone Number</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                required
+              />
+
+              <label for="date" data-translate="visit_date">Visit Date</label>
+              <input type="date" id="date" name="date" required />
+
+              <label for="ticket-type" data-translate="ticket_type"
+                >Ticket Type</label
+              >
+              <select id="ticket-type" name="ticket-type">
+                <option value="standard">Standard</option>
+                <option value="vip">VIP</option>
+                <option value="student">Student</option>
+              </select>
+
+              <label for="quantity" data-translate="number_of_tickets"
+                >Number of Tickets</label
+              >
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max="10"
+                value="1"
+                required
+              />
+
+              <!-- زر الحجز -->
+              <button type="button" data-translate="book_now" id="bookBtn">
+                Book Now
+              </button>
+
+              <!-- صندوق تأكيد الحجز -->
+              <div
+                class="confirmationBox"
+                id="confirmationBox"
+                style="
+                  display: none;
+                  background-image: url(./image/فورم.png);
+                  background-position: center;
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                  color: #ddd;
+                  padding: 20px;
+                  margin-top: 20px;
+                  border-radius: 10px;
+                  right: 0;
+                "
+              >
+                <h3
+                  style="color: gold; margin-bottom: 10px"
+                  data-translate="booking_confirmation"
+                >
+                  Booking Confirmation
+                </h3>
+
+                <p>
+                  <strong data-translate="full_name">Full Name:</strong>
+                  <span id="userNameDisplay"></span>
+                </p>
+
+                <p>
+                  <strong data-translate="booking_number"
+                    >Booking Number:</strong
+                  >
+                  <span id="bookingNumber"></span>
+                </p>
+
+                <p>
+                  <strong data-translate="visit_date">Visit Date:</strong>
+                  <span id="visitDateDisplay"></span>
+                </p>
+
+                <p>
+                  <strong data-translate="ticket_type">Ticket Type:</strong>
+                  <span id="ticketTypeDisplay"></span>
+                </p>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <div class="box2">
+          <img src="./image/اللوبي.jpg" alt="" />
+          <div class="stat-box1">
+            <h3 data-translate="largest_museum">
+              The Largest Archaeological Museum
+            </h3>
+            <p class="number">500,000</p>
+            <p data-translate="total_area">Square meters total area</p>
+          </div>
+          <div class="stat-box1">
+            <h3 data-translate="home_to">Home to more than</h3>
+            <p class="number">100,000</p>
+            <p data-translate="ancient_artifacts">Ancient artifacts</p>
+          </div>
+          <div class="stat-box1">
+            <h3 data-translate="exclusive_collection">Exclusive Collection</h3>
+            <p class="number">5,000</p>
+            <p data-translate="king_tut">Artifacts of King Tutankhamun</p>
+          </div>
+          <div class="stat-box1">
+            <h3 data-translate="featuring">Featuring</h3>
+            <p class="number">50+</p>
+            <p data-translate="exhibition_halls">
+              Exhibition halls & galleries
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="info-content">
+          <div class="Social">
+            <h2 data-translate="follow_us">Follow Us</h2>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/GrandEgyptianMuseum/">
+                  <i class="fa-brands fa-facebook" style="color: #2115d1"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/grandegyptianmuseum/">
+                  <i class="fa-brands fa-instagram" style="color: #b91d1d"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.tiktok.com/@grandegyptianmuseum?_t=8mwhZT5wHyP&_r=1"
+                >
+                  <i class="fa-brands fa-tiktok" style="color: #ddd"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact">
+            <img
+              src="../The Grand Egyptian Museum/image/وزارة_السياحة_والآثار.png"
+              alt="Ministry Logo"
+            />
+          </div>
+
+          <div class="contact">
+            <h2 data-translate="call_us">Contact Us</h2>
+            <ul>
+              <li><i class="fa-solid fa-phone-volume"></i> : +20235317344</li>
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:Tourism_info@easwaaqmisr.com">
+                  : Tourism_info@easwaaqmisr.com</a
+                >
+              </li>
+              <li class="active" data-translate="developed_by">
+                © Developed by Abdullah Hani
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/teckt.js"></script>
+  </body>
+</html>

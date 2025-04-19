@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Grand Egyptian Museum</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Papyrus&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/kid.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+  </head>
+  <body>
+    <div class="overly"></div>
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a class="logo" href="./index.html">
+            <img
+              src="./image/photo_2025-03-18_21-31-54-removebg-preview.png"
+              width="250px"
+              alt="Logo"
+            />
+          </a>
+          <i class="fa-solid fa-bars toggle-menu"></i>
+          <ul class="nav-links">
+            <li class="dropdown">
+              <a href="#" data-translate="about">About</a>
+              <button class="dropdown-toggle">▼</button>
+              <ul class="dropdown-menu">
+                <li><a href="#" data-translate="our_story">Our Story</a></li>
+                <li>
+                  <a href="#" data-translate="mission_vision"
+                    >Mission & Vision</a
+                  >
+                </li>
+                <li><a href="#" data-translate="team">Team</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" data-translate="tours">Tourist</a>
+              <button class="dropdown-toggle">▼</button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="Tour.html" data-translate="popular_tours"
+                    >Popular Tours</a
+                  >
+                </li>
+                <li>
+                  <a href="./teckt.html" data-translate="book_trip"
+                    >Book a Trip</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../The Grand Egyptian Museum/guidelines.html"
+                    data-translate="guidelines"
+                    >Guidelines</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown egypt-text">
+              <a href="./index.html" target="_blank" data-translate="home"
+                >Home</a
+              >
+            </li>
+
+            <li class="dropdown">
+              <a href="#" data-translate="history">History</a>
+              <button class="dropdown-toggle">▼</button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="./date.html" data-translate="museum_history"
+                    >Museum History</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./The great kings of Egypt.html"
+                    data-translate="great_kings"
+                    >The Great Kings of Egypt</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <div class="language-switch">
+              <button class="lang-btn" data-lang="en">English</button>
+              <button class="lang-btn" data-lang="ar">العربية</button>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- end header  -->
+    <section class="hero-section">
+      <div class="hero-overlay">
+        <h1 data-translate="book_tickets">Children's Museum</h1>
+        <div
+          class="scroll-down"
+          onclick="document.querySelector('#museum').scrollIntoView({ behavior: 'smooth' });"
+        >
+          <i class="fa-solid fa-angles-down"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="section image-section dir" id="museum">
+      <div class="content">
+        <h2 data-translate="exciting_experience">
+          An Exciting Experience for Kids at the Grand Egyptian Museum's
+          Children's Museum
+        </h2>
+        <p data-translate="exciting_experience_description">
+          An experience designed to spark children's curiosity and bring them
+          closer to their extraordinary cultural heritage through engaging,
+          hands-on educational activities, perfectly designed for young
+          inquisitive minds. With sensory stimulation, combining thrilling
+          visuals, exciting sounds, and tangible materials, the museum becomes a
+          magical, captivating place where young visitors can immerse themselves
+          in the grandeur and mysteries of ancient Egypt, transforming history
+          into a living and fascinating source of interest.
+        </p>
+      </div>
+      <div class="imgy">
+        <img src="./image/اطفال.jpg" alt="Children's Museum" />
+      </div>
+    </section>
+
+    <section class="section image-section">
+      <div class="content">
+        <h2 data-translate="museum_tours">
+          The Grand Egyptian Museum Offers Kids Tours Inside the "Children's
+          Museum"
+        </h2>
+        <p data-translate="museum_tours_description">
+          The Grand Egyptian Museum offers children's tours inside the
+          “Children’s Museum” located within the museum. The place is designed
+          to nurture kids' passion through customized educational experiences
+          using visual, auditory, and sensory tools, with the main aim to
+          captivate children and showcase the magnificence of ancient Egyptian
+          civilization.
+        </p>
+      </div>
+      <img src="./image/شب.jpg" alt="Children's Museum" />
+    </section>
+
+    <section class="section age-tour-section">
+      <div class="content">
+        <h2 data-translate="tour_details_by_age">Tour Details by Age</h2>
+        <p data-translate="tour_details_by_age_description">
+          We offer age-specific tours for children, with each tour designed to
+          suit the needs of different age groups. Below are the details of the
+          tours by age:
+        </p>
+        <div class="age-group">
+          <h3 data-translate="age_3_5">Children Aged 3 to 5</h3>
+          <p data-translate="age_3_5_description">
+            Interactive tours using colors and sounds to grab children's
+            attention, with simple educational games explaining the ancient
+            Egyptian civilization in a fun way.
+          </p>
+        </div>
+        <div class="age-group">
+          <h3 data-translate="age_6_8">Children Aged 6 to 8</h3>
+          <p data-translate="age_6_8_description">
+            Tours based on hands-on activities and interactive storytelling,
+            allowing children to learn about the key aspects of ancient Egyptian
+            civilization through play and engagement with exhibits.
+          </p>
+        </div>
+        <div class="age-group">
+          <h3 data-translate="age_9_12">Children Aged 9 to 12</h3>
+          <p data-translate="age_9_12_description">
+            Educational tours focused on an in-depth understanding of ancient
+            Egypt's history and key discoveries, using multimedia techniques and
+            group activities.
+          </p>
+        </div>
+        <div class="age-group">
+          <h3 data-translate="age_13_and_above">Children Aged 13 and Above</h3>
+          <p data-translate="age_13_and_above_description">
+            Advanced tours featuring detailed historical information and virtual
+            reality experiences to enhance the learning experience.
+          </p>
+        </div>
+      </div>
+      <a class="show-btn" href="./teckt.html" target="_blank">
+        <button class="show-btn" data-translate="explore">
+          Book A Ticket!
+        </button>
+      </a>
+    </section>
+
+    <section class="section image-section reverse">
+      <img src="./image/طفل جولة.jpg" alt="Museum Activities" />
+      <div class="content">
+        <h2 data-translate="more_about_museum">
+          More Details About Visiting the Children's Museum
+        </h2>
+        <p data-translate="museum_details_ages">
+          The Children's Museum at the Grand Egyptian Museum is suitable for
+          children aged 6-12.
+        </p>
+        <p data-translate="tour_duration">The tour lasts 45 minutes.</p>
+        <p data-translate="available_in_languages">
+          The tour is available in both Arabic and English.
+        </p>
+        <p data-translate="school_booking">
+          To book school visits, contact us at
+          <a href="mailto:learning@gem.eg">learning@gem.eg</a>.
+        </p>
+        <p data-translate="ticket_information">
+          Non-Egyptian individuals married to Egyptians and their children, or
+          vice versa, are eligible to purchase Egyptian entry tickets.
+        </p>
+        <p data-translate="booking_policy">
+          All bookings are non-transferable and non-refundable.
+        </p>
+        <p data-translate="parking_available">
+          Parking is available on-site for a fee.
+        </p>
+      </div>
+    </section>
+
+    <!-- footer  -->
+    <footer>
+      <div class="container">
+        <div class="info-content">
+          <div class="Social">
+            <h2 data-translate="follow_us">Follow Us</h2>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/GrandEgyptianMuseum/">
+                  <i class="fa-brands fa-facebook" style="color: #2115d1"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/grandegyptianmuseum/">
+                  <i class="fa-brands fa-instagram" style="color: #b91d1d"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.tiktok.com/@grandegyptianmuseum?_t=8mwhZT5wHyP&_r=1"
+                >
+                  <i class="fa-brands fa-tiktok" style="color: #ddd"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact">
+            <img
+              src="../The Grand Egyptian Museum/image/وزارة_السياحة_والآثار.png"
+              alt="Ministry Logo"
+            />
+          </div>
+
+          <div class="contact">
+            <h2 data-translate="call_us">Contact Us</h2>
+            <ul>
+              <li><i class="fa-solid fa-phone-volume"></i> : +20235317344</li>
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:Tourism_info@easwaaqmisr.com">
+                  : Tourism_info@easwaaqmisr.com</a
+                >
+              </li>
+              <li class="active" data-translate="developed_by">
+                © Developed by Abdullah Hani
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/kid.js"></script>
+  </body>
+</html>

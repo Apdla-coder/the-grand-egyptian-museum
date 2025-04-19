@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grand Egyptian Museum</title>
+
+    <!-- Google Fonts for the website -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Papyrus&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS files -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/date.css" />
+  </head>
+  <body>
+    <!-- Header section with video background -->
+    <header>
+      <!-- Navigation menu -->
+      <div class="container">
+        <nav class="navbar">
+          <a class="logo" href="./index.html">
+            <img
+              src="./image/photo_2025-03-18_21-31-54-removebg-preview.png"
+              width="200px"
+              alt="Logo"
+            />
+          </a>
+          <i class="fa-solid fa-bars toggle-menu"></i>
+          <ul class="nav-links">
+            <li class="dropdown">
+              <a href="#" data-translate="about">About</a>
+              <button class="dropdown-toggle">▼</button>
+              <ul class="dropdown-menu">
+                <li><a href="#" data-translate="our_story">Our Story</a></li>
+                <li>
+                  <a href="#" data-translate="mission_vision"
+                    >Mission & Vision</a
+                  >
+                </li>
+                <li><a href="#" data-translate="team">Team</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" data-translate="tours">Tourist</a>
+              <button class="dropdown-toggle">▼</button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="Tour.html" data-translate="popular_tours"
+                    >Popular Tours</a
+                  >
+                </li>
+                <li>
+                  <a href="./teckt.html" data-translate="book_trip"
+                    >Book a Trip</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../The Grand Egyptian Museum/guidelines.html"
+                    data-translate="guidelines"
+                    >guidelines</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown egypt-text">
+              <a href="./index.html" target="_blank" data-translate="home"
+                >Home</a
+              >
+            </li>
+
+            <li class="dropdown">
+              <a href="#" data-translate="history">HISTORY</a>
+              <button class="dropdown-toggle">▼</button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="./date.html" data-translate="museum_history"
+                    >Museum history</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./The great kings of Egypt.html"
+                    data-translate="great_kings"
+                    >The great kings of Egypt</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <div class="language-switch">
+              <button class="lang-btn" data-lang="en">English</button>
+              <button class="lang-btn" data-lang="ar">العربية</button>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Video background -->
+    <div class="video-background">
+      <iframe
+        src="https://www.youtube.com/embed/u461ixv1ws8?autoplay=1&controls=1&loop=1&playlist=u461ixv1ws8"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- "About the Museum" section -->
+    <section id="history">
+      <h2 data-translate="about_the_museum">About the Museum</h2>
+      <p data-translate="museum_info">
+        The Grand Egyptian Museum is the largest archaeological museum in the
+        world dedicated to a single civilization. It is located near the
+        Pyramids of Giza and houses a massive collection of Egyptian artifacts,
+        including the treasures of Tutankhamun.
+      </p>
+      <p data-translate="museum_construction">
+        Construction began in 2002, and it is expected to be a global center for
+        preserving and displaying Egyptian heritage using the latest
+        technologies.
+      </p>
+    </section>
+
+    <!-- "Museum Info" section -->
+    <section id="museum-info">
+      <div class="container">
+        <img src="image/kkk.jpg" alt="Museum" />
+        <div class="text">
+          <h2 data-translate="history_of_museum">
+            History of the Grand Egyptian Museum
+          </h2>
+          <p data-translate="museum_history">
+            The Grand Egyptian Museum project was announced in 2002 to be the
+            largest archaeological museum in the world. It aims to accommodate
+            and display over 100,000 artifacts, including the complete
+            collection of Tutankhamun.
+          </p>
+          <p data-translate="museum_design">
+            The museum features modern architectural design inspired by ancient
+            Egyptian civilization and is a new gateway for discovering the
+            secrets of the pharaohs in an interactive and advanced way.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- "Museum Stats" section -->
+    <section id="museum-stats">
+      <div class="container">
+        <h2 data-translate="museum_facts">
+          Facts About the Grand Egyptian Museum
+        </h2>
+        <div class="stats-grid">
+          <div class="stat">
+            <h3 class="counter" data-target="100000">100000</h3>
+            <p data-translate="artifacts">Artifacts</p>
+          </div>
+          <div class="stat">
+            <h3 class="counter" data-target="480000">480000</h3>
+            <p data-translate="area">Area in Square Meters</p>
+          </div>
+          <div class="stat">
+            <h3 class="counter" data-target="2002">2002</h3>
+            <p data-translate="construction_start">Construction Start Year</p>
+          </div>
+          <div class="stat">
+            <h3 class="counter" data-target="2025">2025</h3>
+            <p data-translate="expected_opening">Expected Opening Year</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- "Why Visit" section -->
+    <section id="why-visit">
+      <div class="container">
+        <h2 data-translate="why_visit">Why Visit the Grand Egyptian Museum?</h2>
+        <div class="reasons-grid">
+          <div class="reason">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3082/3082383.png"
+              alt="Discover History"
+            />
+            <h3 data-translate="discover_history">Discover History</h3>
+            <p data-translate="history_description">
+              The museum contains over 100,000 rare artifacts from ancient
+              Egyptian civilization.
+            </p>
+          </div>
+          <div class="reason">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3347/3347977.png"
+              alt="Modern Technologies"
+            />
+            <h3 data-translate="modern_technologies">Modern Technologies</h3>
+            <p data-translate="technologies_description">
+              It uses the latest augmented reality technologies and digital
+              interactions for a unique experience.
+            </p>
+          </div>
+          <div class="reason">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+              alt="Exceptional Location"
+            />
+            <h3 data-translate="exceptional_location">Exceptional Location</h3>
+            <p data-translate="location_description">
+              The museum is located near the Pyramids of Giza, making it an
+              ideal destination for tourism and culture.
+            </p>
+          </div>
+          <div class="reason">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/889/889590.png"
+              alt="Special Exhibitions"
+            />
+            <h3 data-translate="special_exhibitions">Special Exhibitions</h3>
+            <p data-translate="exhibitions_description">
+              The museum hosts temporary events and exhibitions showcasing the
+              greatest treasures of Egypt throughout the ages.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+      <div class="container">
+        <div class="info-content">
+          <div class="Social">
+            <h2 data-translate="follow_us">Follow Us</h2>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/GrandEgyptianMuseum/">
+                  <i class="fa-brands fa-facebook" style="color: #2115d1"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/grandegyptianmuseum/">
+                  <i class="fa-brands fa-instagram" style="color: #b91d1d"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.tiktok.com/@grandegyptianmuseum?_t=8mwhZT5wHyP&_r=1"
+                >
+                  <i class="fa-brands fa-tiktok" style="color: #ddd"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact">
+            <img
+              src="../The Grand Egyptian Museum/image/وزارة_السياحة_والآثار.png"
+              alt="Ministry Logo"
+            />
+          </div>
+
+          <div class="contact">
+            <h2 data-translate="call_us">Contact Us</h2>
+            <ul>
+              <li><i class="fa-solid fa-phone-volume"></i> : +20235317344</li>
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:Tourism_info@easwaaqmisr.com">
+                  : Tourism_info@easwaaqmisr.com</a
+                >
+              </li>
+              <li class="active" data-translate="developed_by">
+                © Developed by Abdullah Hani
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- External JS file for date handling -->
+    <script src="./js/date.js"></script>
+  </body>
+</html>

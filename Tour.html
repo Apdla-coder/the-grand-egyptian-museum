@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Grand Egyptian Museum</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Papyrus&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/Tour.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+  </head>
+  <body>
+    <div class="overly"></div>
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a class="logo" href="./index.html">
+            <img
+              src="./image/photo_2025-03-18_21-31-54-removebg-preview.png"
+              width="250px"
+              alt="Logo"
+            />
+          </a>
+          <i class="fa-solid fa-bars toggle-menu"></i>
+          <ul class="nav-links">
+            <li class="dropdown">
+              <a href="#" data-translate="about">About</a>
+              <button class="dropdown-toggle">▼</button>
+              <ul class="dropdown-menu">
+                <li><a href="#" data-translate="our_story">Our Story</a></li>
+                <li>
+                  <a href="#" data-translate="mission_vision"
+                    >Mission & Vision</a
+                  >
+                </li>
+                <li><a href="#" data-translate="team">Team</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" data-translate="tours">Tourist</a>
+              <button class="dropdown-toggle">▼</button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="Tour.html" data-translate="popular_tours"
+                    >Popular Tours</a
+                  >
+                </li>
+                <li>
+                  <a href="./teckt.html" data-translate="book_trip"
+                    >Book a Trip</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../The Grand Egyptian Museum/guidelines.html"
+                    data-translate="guidelines"
+                    >guidelines</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown egypt-text">
+              <a href="./index.html" target="_blank" data-translate="home"
+                >Home</a
+              >
+            </li>
+
+            <li class="dropdown">
+              <a href="#" data-translate="history">HISTORY</a>
+              <button class="dropdown-toggle">▼</button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="./date.html" data-translate="museum_history"
+                    >Museum history</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./The great kings of Egypt.html"
+                    data-translate="great_kings"
+                    >The great kings of Egypt</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <div class="language-switch">
+              <button class="lang-btn" data-lang="en">English</button>
+              <button class="lang-btn" data-lang="ar">العربية</button>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- end header  -->
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay">
+        <h1 data-translate="book_tickets">popular tours</h1>
+        <div
+          class="scroll-down"
+          onclick="document.querySelector('.tour-section').scrollIntoView({ behavior: 'smooth' });"
+        >
+          <i class="fa-solid fa-angles-down"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Royal Treasures Tour -->
+    <section class="tour-section">
+      <div class="tour-content">
+        <img src="./image/knz.jpg" alt="Mummies Hall" class="tour-img" />
+        <div class="tour-text">
+          <h2 data-translate="royal_title">Royal Treasures Tour</h2>
+          <p data-translate="royal_desc">
+            This guided tour takes you deep into the heart of Ancient Egypt's
+            wealth and grandeur. You’ll experience:
+          </p>
+          <ul>
+            <li data-translate="royal_point_1">
+              🟡 The full collection of King Tutankhamun’s golden treasures.
+            </li>
+            <li data-translate="royal_point_2">
+              🟡 Rare royal thrones, jewelry, and ancient artifacts.
+            </li>
+            <li data-translate="royal_point_3">
+              🟡 Expert narration about the life and legacy of the boy king.
+            </li>
+          </ul>
+          <p>
+            <strong data-translate="duration">Duration:</strong> 1 hour 30
+            minutes
+          </p>
+          <a href="./teckt.html" class="book-btn" data-translate="book_tour_btn"
+            >Book This Tour</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Mummies Hall Tour -->
+    <section class="tour-section">
+      <div class="tour-content reverse">
+        <img src="./image/مومياء.jpg" alt="Royal Treasures" class="tour-img" />
+        <div class="tour-text">
+          <h2 data-translate="mummy_title">Mummies Hall Tour</h2>
+          <p data-translate="mummy_desc">
+            Discover the secrets of the ancient afterlife in this hauntingly
+            beautiful tour. Highlights include:
+          </p>
+          <ul>
+            <li data-translate="mummy_point_1">
+              🟡 Access to the Royal Mummies Hall featuring real pharaohs.
+            </li>
+            <li data-translate="mummy_point_2">
+              🟡 Insights into the mummification process and rituals.
+            </li>
+            <li data-translate="mummy_point_3">
+              🟡 Ambient lighting and soundscapes for full immersion.
+            </li>
+          </ul>
+          <p><strong data-translate="duration">Duration:</strong> 1 hour</p>
+          <a href="./teckt.html" class="book-btn" data-translate="reserve_btn"
+            >Reserve Now</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <div class="social-media">
+            <h2 data-translate="follow_us">FOLLOW US</h2>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/GrandEgyptianMuseum/">
+                  <i class="fa-brands fa-facebook" style="color: #2115d1"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/grandegyptianmuseum/">
+                  <i class="fa-brands fa-instagram" style="color: #b91d1d"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.tiktok.com/@grandegyptianmuseum?_t=8mwhZT5wHyP&_r=1"
+                >
+                  <i class="fa-brands fa-tiktok" style="color: #ddd"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-info">
+            <img
+              src="../The Grand Egyptian Museum/image/وزارة_السياحة_والآثار.png"
+              alt="Ministry Logo"
+            />
+          </div>
+
+          <div class="contact-details">
+            <h2 data-translate="call_us">Call Us</h2>
+            <ul>
+              <li><i class="fa-solid fa-phone-volume"></i> : +20235317344</li>
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:Tourism_info@easwaaqmisr.com"
+                  >: Tourism_info@easwaaqmisr.com</a
+                >
+              </li>
+              <li class="footer-developed" data-translate="developed_by">
+                © Developed by Abdullah Hani
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/tour.js"></script>
+  </body>
+</html>
