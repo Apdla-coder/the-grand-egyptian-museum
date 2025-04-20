@@ -20,7 +20,7 @@ body {
   align-items: center;
   position: sticky;
   z-index: 100;
-  background: black;
+  background: rgba(0, 0, 0, 0.521);
   position: absolute;
   top: 0;
   left: 0;
@@ -156,7 +156,7 @@ header {
 /* Video Background */
 .video-background {
   position: relative;
-  top: 0;
+  top: -80px;
   left: 0;
   width: 100%;
   height: 60vh;
@@ -603,6 +603,9 @@ footer .active {
 /* 🔸 Mobile (max-width: 767px) */
 @media (max-width: 767px) {
   .landing {
+    height: 40vh;
+  }
+  .video-background {
     height: 40vh;
   }
   .nav-links {

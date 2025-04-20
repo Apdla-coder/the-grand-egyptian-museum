@@ -179,7 +179,7 @@ p {
 /* Hero section */
 .hero-section {
   position: relative;
-  background: url("../image/bac.jpg") no-repeat center center/cover;
+  background: url("../image/اطفال.jpg") no-repeat center center/cover;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -229,7 +229,7 @@ p {
 
 .hero-overlay {
   background: rgba(0, 0, 0, 0.4);
-  padding: 20px;
+  padding: 0;
   border-radius: 10px;
   position: relative;
 }
@@ -594,6 +594,12 @@ footer .active {
 @media (max-width: 767px) {
   .landing {
     height: 40vh;
+  }
+  .hero-section {
+    height: 40vh;
+  }
+  .section {
+    flex-direction: column-reverse;
   }
   .section img {
     width: 100% !important;
