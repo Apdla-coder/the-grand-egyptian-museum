@@ -1093,7 +1093,7 @@ footer .footer-developed {
 /* 🔸 Mobile (max-width: 767px) */
 @media (max-width: 767px) {
   .landing {
-    height: 40vh;
+    height: 30vh;
   }
   .nav-links {
     display: none;
