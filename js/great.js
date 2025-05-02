@@ -50,15 +50,19 @@ document.addEventListener("click", function (event) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const langButtons = document.querySelectorAll(".lang-btn");
+  const navbar = document.querySelector(".navbar"); // حدد النافبار
 
   const translations = {
     en: {
       the_great_kings_of_egypt: "The Great Kings of Egypt",
       about: "About",
-      our_story: "Our Story",
+      History: "  Museum History",
       mission_vision: "Mission & Vision",
-      team: "Team",
-      tourist: "Tourist",
+      Archaeological: "Archaeological groups",
+      Unique_pieces: "Unique pieces",
+
+      team: "Museum management",
+      tours: "Tourist",
       popular_tours: "Popular Tours",
       book_trip: "Book a Trip",
       guidelines: "Guidelines",
@@ -100,11 +104,14 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     ar: {
       the_great_kings_of_egypt: "الملوك العظماء في مصر",
-      about: "عن",
-      our_story: "قصتنا",
+      about: "عن المتحف",
+      History: "  تاريخ المتحف",
+      Archaeological: "المجموعات الاثرية",
+      Unique_pieces: "القطع الفريدة",
+
       mission_vision: "المهمة والرؤية",
-      team: "الفريق",
-      tourist: "السياحة",
+      team: "ادارة المتحف",
+      tours: "السياحة",
       popular_tours: "الجولات السياحية الشهيرة",
       book_trip: "احجز رحلتك",
       guidelines: "إرشادات",
@@ -158,13 +165,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // 🔹 Set Language Direction (RTL or LTR)
+  function setDirection(lang) {
+    if (lang === "en") {
+      document.documentElement.lang = "ar";
+      document.body.dir = "rtl";
+      if (navbar) {
+        navbar.classList.remove("ltr");
+        navbar.classList.add("rtl");
+      }
+    } else {
+      document.documentElement.lang = "en";
+      document.body.dir = "ltr";
+      if (navbar) {
+        navbar.classList.remove("rtl");
+        navbar.classList.add("ltr");
+      }
+    }
+  }
+
   // Language button click events
   langButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const lang = button.getAttribute("data-lang");
       setLanguage(lang);
+      setDirection(lang);
 
-      // Optional: highlight active button
+      // highlight active button
       langButtons.forEach((btn) => btn.classList.remove("active-lang"));
       button.classList.add("active-lang");
     });
@@ -173,8 +200,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set initial language (saved or default to English)
   const savedLang = localStorage.getItem("selectedLang") || "en";
   setLanguage(savedLang);
+  setDirection(savedLang);
 
-  // Optional: highlight active button on load
+  // highlight active button on load
   langButtons.forEach((btn) => {
     if (btn.getAttribute("data-lang") === savedLang) {
       btn.classList.add("active-lang");

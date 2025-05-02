@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unique pieces</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Papyrus&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/Unique.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+  </head>
+  <body>
+    <div class="overly"></div>
+
+    <!-- Header/Navbar -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a class="logo" href="./index.html">
+            <img
+              src="./image/photo_2025-03-18_21-31-54-removebg-preview.png"
+              width="200px"
+              alt="Museum Logo"
+            />
+          </a>
+          <i class="fa-solid fa-bars toggle-menu"></i>
+          <ul class="nav-links">
+            <li class="dropdown">
+              <button class="dropdown-toggle" data-translate="about">
+                About
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="./date.html" data-translate="history"
+                    >Museum History</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./Mission&Vision.html"
+                    data-translate="mission_vision"
+                    >Mission & Vision</a
+                  >
+                </li>
+                <li>
+                  <a href="./team.html" data-translate="team"
+                    >Museum management
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <button class="dropdown-toggle" data-translate="tours">
+                Tourist
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="Tour.html" data-translate="popular_tours"
+                    >Popular Tours</a
+                  >
+                </li>
+                <li>
+                  <a href="./teckt.html" data-translate="book_trip"
+                    >Book a Trip</a
+                  >
+                </li>
+                <li>
+                  <a href="./guidelines.html" data-translate="guidelines"
+                    >Guidelines</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown egypt-text">
+              <a href="./index.html" target="_blank" data-translate="home"
+                >Home</a
+              >
+            </li>
+            <li class="dropdown">
+              <button class="dropdown-toggle" data-translate="Archaeological">
+                Archaeological groups
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="./Uniquepieces.html" data-translate="Unique_pieces"
+                    >Unique pieces</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./The great kings of Egypt.html"
+                    data-translate="great_kings"
+                    >The Great Kings of Egypt</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <div class="language-switch">
+              <button class="lang-btn" data-lang="en">English</button>
+              <button class="lang-btn" data-lang="ar">العربية</button>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay">
+        <h1 data-translate="book_tickets">Unique pieces</h1>
+      </div>
+      <div
+        class="scroll-down"
+        onclick="document.querySelector('#artifacts').scrollIntoView({ behavior: 'smooth' });"
+      >
+        <i class="fa-solid fa-angles-down"></i>
+      </div>
+    </section>
+
+    <div class="search-filter" id="search">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="ابحث عن قطعة أثرية..."
+        data-translate="search_placeholder"
+      />
+      <select id="eraFilter">
+        <option value="all" data-translate="filter_all">جميع العصور</option>
+        <option value="modern" data-translate="filter_modern">
+          العصر الحديث
+        </option>
+        <option value="ancient" data-translate="filter_ancient">
+          العصر الفرعوني
+        </option>
+      </select>
+    </div>
+
+    <!-- artifacts -->
+    <section id="artifacts" class="artifacts-section">
+      <h2 class="section-title" data-translate="3d_artifacts_title">
+        قطع أثرية ثلاثية الأبعاد
+      </h2>
+
+      <div class="artifacts-grid">
+        <!-- قطعة 1 -->
+        <div class="artifact-card" data-era="ancient">
+          <h3 data-translate="ramses_statue_title">تمثال رمسيس الثاني</h3>
+          <p data-translate="ramses_statue_desc">
+            تمثال ضخم للملك رمسيس الثاني، يُعرض في بهو المتحف المصري الكبير.
+          </p>
+          <iframe
+            title="Ramesses II Statue"
+            data-translate="ramses_statue_iframe_title"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share
+            width="100%"
+            height="300px"
+            src="https://sketchfab.com/models/65e163c8e9494031aa5079bb0428a7c9/embed"
+          >
+          </iframe>
+        </div>
+
+        <div class="artifact-card" data-era="ancient">
+          <h3 data-translate="thutmose_statue_title">تمثال تحتمس الثالث</h3>
+          <p data-translate="thutmose_statue_desc">
+            تحتمس الثالث، أحد أعظم القادة العسكريين في مصر القديمة، ويُعرف بلقب
+            "نابليون مصر القديمة".
+          </p>
+          <iframe
+            title="Tutankhamun Mask"
+            data-translate="thutmose_statue_iframe_title"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share
+            width="100%"
+            height="300px"
+            src="https://sketchfab.com/models/cee76637f8934cc4924107ab74653808/embed"
+          >
+          </iframe>
+        </div>
+
+        <!-- قطعة 2 -->
+        <div class="artifact-card" data-era="ancient">
+          <h3 data-translate="tut_mask_title">قناع توت عنخ آمون</h3>
+          <p data-translate="tut_mask_desc">
+            القناع الذهبي الشهير للملك توت عنخ آمون، أحد أبرز كنوز المقبرة
+            الملكية.
+          </p>
+          <iframe
+            title="Tutankhamun Mask"
+            data-translate="tut_mask_iframe_title"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share
+            width="100%"
+            height="300px"
+            src="https://sketchfab.com/models/ae758f647b9c4fc48d9dec0b17c23198/embed"
+          >
+          </iframe>
+        </div>
+
+        <!-- قطعة 3 -->
+        <div class="artifact-card" data-era="ancient">
+          <h3 data-translate="anubis_statue_title">تمثال الإله أنوبيس</h3>
+          <p data-translate="anubis_statue_desc">
+            تمثال يمثل الإله أنوبيس، إله التحنيط في الأساطير المصرية.
+          </p>
+          <iframe
+            title="Anubis Statue"
+            data-translate="anubis_statue_iframe_title"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share
+            width="100%"
+            height="300px"
+            src="https://sketchfab.com/models/2355a3e4cf5048579ffb479e5c6d5abb/embed"
+          >
+          </iframe>
+        </div>
+
+        <!-- قطعة 4 -->
+        <div class="artifact-card" data-era="ancient">
+          <h3 data-translate="tut_chariot_title">
+            العجلة الحربية لتوت عنخ آمون
+          </h3>
+          <p data-translate="tut_chariot_desc">
+            عجلة حربية ذهبية كانت جزءًا من مقتنيات الملك توت عنخ آمون.
+          </p>
+          <iframe
+            title="Tutankhamun Chariot"
+            data-translate="tut_chariot_iframe_title"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share
+            width="100%"
+            height="300px"
+            src="https://sketchfab.com/models/d29a834451014363a789edcc28ed90eb/embed"
+          >
+          </iframe>
+        </div>
+
+        <!-- قطعة 5 -->
+        <div class="artifact-card" data-era="ancient">
+          <h3 data-translate="hatshepsut_statue_title">تمثال الملكة حتشبسوت</h3>
+          <p data-translate="hatshepsut_statue_desc">
+            تمثال يصور الملكة حتشبسوت، إحدى أبرز الملكات في التاريخ المصري
+            القديم.
+          </p>
+          <iframe
+            title="Hatshepsut Statue"
+            data-translate="hatshepsut_statue_iframe_title"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share
+            width="100%"
+            height="300px"
+            src="https://sketchfab.com/models/b19723439bd2426fb915d67482235d8d/embed"
+          >
+          </iframe>
+        </div>
+
+        <!-- قطعة 6 -->
+        <div class="artifact-card" data-era="ancient">
+          <h3 data-translate="khufu_boat_title">مركب الشمس للملك خوفو</h3>
+          <p data-translate="khufu_boat_desc">
+            مركب خشبي ضخم يُعتقد أنه كان يستخدم في الطقوس الجنائزية للملك خوفو.
+          </p>
+          <iframe
+            title="Khufu Solar Boat"
+            data-translate="khufu_boat_iframe_title"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share
+            width="100%"
+            height="300px"
+            src="https://sketchfab.com/models/02866da1618749b0ae3ffc07d57667be/embed"
+          >
+          </iframe>
+        </div>
+
+        <!-- قطعة 7 -->
+        <div class="artifact-card" data-era="ancient">
+          <h3 data-translate="amenhotep_statue_title">
+            تمثال آمون حتب الثالث والملكة تيي
+          </h3>
+          <p data-translate="amenhotep_statue_desc">
+            تمثال مزدوج يصور الملك آمون حتب الثالث وزوجته الملكة تيي.
+          </p>
+          <iframe
+            title="Amenhotep III and Queen Tiye Statue"
+            data-translate="amenhotep_statue_iframe_title"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share
+            width="100%"
+            height="300px"
+            src="https://sketchfab.com/models/270ac5b4a63b4f46bb24e6dd255d18cc/embed"
+          >
+          </iframe>
+        </div>
+
+        <!-- قطعة 8 -->
+        <div class="artifact-card" data-era="ancient">
+          <h3 data-translate="tut_throne_title">عرش توت عنخ آمون الذهبي</h3>
+          <p data-translate="tut_throne_desc">
+            عرش مزخرف بالذهب يُظهر الملك توت عنخ آمون وزوجته في لحظة حميمية.
+          </p>
+          <iframe
+            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+            frameborder="0"
+            width="100%"
+            height="300px"
+            src="https://sketchfab.com/models/21cd6cb690c744a6a9f3f54b736c2caa/embed"
+            title="Tutankhamun Golden Throne"
+            data-translate="tut_throne_iframe_title"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="section-title" data-translate="photo_artifacts_title">
+      قطع أثرية صور
+    </h2>
+
+    <section class="cards-section">
+      <div class="card" data-era="ancient">
+        <img
+          src="./الملوك/توت.jpg"
+          alt="قناع توت عنخ آمون"
+          data-translate="tut_mask_img_alt"
+        />
+        <h3 data-translate="tut_mask_card_title">قناع توت عنخ آمون</h3>
+        <p data-translate="tut_mask_card_desc">
+          أشهر القطع الفرعونية، مصنوع من الذهب الخالص، يعود للفرعون توت عنخ
+          آمون.
+        </p>
+      </div>
+
+      <div class="card" data-era="ancient">
+        <img
+          src="./الملوك/رمسيس2.jpg"
+          alt="تمثال رمسيس الثاني"
+          data-translate="ramses_statue_img_alt"
+        />
+        <h3 data-translate="ramses_statue_card_title">تمثال رمسيس الثاني</h3>
+        <p data-translate="ramses_statue_card_desc">
+          تمثال ضخم يعكس قوة وعظمة الملك رمسيس الثاني، كان يُعرض سابقًا في ميدان
+          رمسيس.
+        </p>
+      </div>
+
+      <div class="card" data-era="ancient">
+        <img
+          src="./الملوك/الاواني.jpg"
+          alt="أواني كانوبية"
+          data-translate="canopic_jars_img_alt"
+        />
+        <h3 data-translate="canopic_jars_title">الأواني الكانوبية</h3>
+        <p data-translate="canopic_jars_desc">
+          تُستخدم لحفظ أحشاء المتوفى أثناء التحنيط، وغالبًا ما تُزين برؤوس
+          الآلهة الأربعة.
+        </p>
+      </div>
+
+      <div class="card" data-era="ancient">
+        <img
+          src="./الملوك/مركب.jpg"
+          alt="مركب خوفو"
+          data-translate="khufu_ship_img_alt"
+        />
+        <h3 data-translate="khufu_ship_title">مركب خوفو</h3>
+        <p data-translate="khufu_ship_desc">
+          سفينة شمسية خشبية تعود للملك خوفو، عُثر عليها بجانب الهرم الأكبر.
+        </p>
+      </div>
+
+      <div class="card" data-era="ancient">
+        <img
+          src="./الملوك/حجر رشيد.webp"
+          alt="حجر رشيد"
+          data-translate="rosetta_stone_img_alt"
+        />
+        <h3 data-translate="rosetta_stone_title">حجر رشيد</h3>
+        <p data-translate="rosetta_stone_desc">
+          الحجر الذي فَكّ رموز اللغة المصرية القديمة، يحتوي على نصوص بثلاث لغات.
+        </p>
+      </div>
+
+      <div class="card" data-era="ancient">
+        <img
+          src="./الملوك/انوبيس.jpg"
+          alt="تمثال أنوبيس"
+          data-translate="anubis_statue_img_alt"
+        />
+        <h3 data-translate="anubis_statue_card_title">تمثال أنوبيس</h3>
+        <p data-translate="anubis_statue_card_desc">
+          إله التحنيط وحارس القبور، يُجسد بشكل ابن آوى، وكان يحمي المتوفى في
+          العالم الآخر.
+        </p>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <div class="social-media">
+            <h2 data-translate="follow_us">Follow Us</h2>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/GrandEgyptianMuseum/"
+                  ><i class="fa-brands fa-facebook" style="color: #2115d1"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/grandegyptianmuseum/"
+                  ><i class="fa-brands fa-instagram" style="color: #b91d1d"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@grandegyptianmuseum"
+                  ><i class="fa-brands fa-tiktok" style="color: #ddd"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="contact-info">
+            <img
+              src="../The Grand Egyptian Museum/image/وزارة_السياحة_والآثار.png"
+              alt="Ministry Logo"
+            />
+          </div>
+          <div class="contact-details">
+            <h2 data-translate="call_us">Call Us</h2>
+            <ul>
+              <li><i class="fa-solid fa-phone-volume"></i> : +20235317344</li>
+              <li>
+                <i class="fa-solid fa-envelope"></i
+                ><a href="mailto:Tourism_info@easwaaqmisr.com">
+                  : Tourism_info@easwaaqmisr.com</a
+                >
+              </li>
+              <li class="footer-developed" data-translate="developed_by">
+                © Developed by Abdullah Hani
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="./js/translateu.js"></script>
+    <script src="./js/Unique.js"></script>
+  </body>
+</html>

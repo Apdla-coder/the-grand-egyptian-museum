@@ -56,9 +56,13 @@ const translations = {
     about: "About",
     tours: "Tourist",
     home: "Home",
-    history: "HISTORY",
+    Archaeological: " Archaeological groups",
     book_tickets: "Book tickets",
     book_your_ticket: "Book Your Ticket",
+    history: "Museum History",
+    Unique_pieces: "Unique pieces",
+    great_kings: "The Great Kings of Egypt  ",
+
     full_name: "Full Name",
     email: "Email",
     phone_number: "Phone Number",
@@ -79,7 +83,7 @@ const translations = {
     follow_us: "FOLLOW US",
     our_story: "Our Story",
     mission_vision: "Mission & Vision",
-    team: "Team",
+    team: "Museum management",
     popular_tours: "Popular Tours",
     book_trip: "Book a Trip",
     guidelines: "Guidelines",
@@ -92,9 +96,12 @@ const translations = {
     about: "حول",
     tours: "السياحة",
     home: "الصفحة الرئيسية",
-    history: "التاريخ",
+    Archaeological: " المجموعات الاثرية ",
     book_tickets: "حجز التذاكر",
     book_your_ticket: "احجز تذكرتك",
+    history: "تاريخ المتحف",
+    Unique_pieces: "القطع الفريدة",
+    great_kings: "ملوك مصر العظماء",
     full_name: "الاسم الكامل",
     email: "البريد الإلكتروني",
     phone_number: "رقم الهاتف",
@@ -115,7 +122,7 @@ const translations = {
     follow_us: "تابعنا",
     our_story: "قصتنا",
     mission_vision: "المهمة والرؤية",
-    team: "الفريق",
+    team: "ادارة المتحف",
     popular_tours: "الجولات الشهيرة",
     book_trip: "احجز رحلة",
     guidelines: "إرشادات",
@@ -128,6 +135,17 @@ const translations = {
 
 let currentLang = "en";
 
+// Function to set language direction (LTR or RTL)
+function setDirection(lang) {
+  if (lang === "en") {
+    document.documentElement.lang = "ar";
+    document.body.dir = "rtl";
+  } else {
+    document.documentElement.lang = "en";
+    document.body.dir = "ltr";
+  }
+}
+
 function translatePage(lang) {
   const elements = document.querySelectorAll("[data-translate]");
   elements.forEach((element) => {
@@ -136,8 +154,12 @@ function translatePage(lang) {
       element.innerText = translations[lang][key];
     }
   });
+
+  // Set the page direction based on selected language
+  setDirection(lang);
 }
 
+// Language buttons event listeners
 document.querySelectorAll(".lang-btn").forEach((button) => {
   button.addEventListener("click", (e) => {
     currentLang = e.target.getAttribute("data-lang");
@@ -145,8 +167,10 @@ document.querySelectorAll(".lang-btn").forEach((button) => {
   });
 });
 
+// Initial language translation
 translatePage(currentLang);
 
+// Booking functionality
 const bookBtn = document.getElementById("bookBtn");
 const confirmationBox = document.getElementById("confirmationBox");
 const bookingNumberEl = document.getElementById("bookingNumber");

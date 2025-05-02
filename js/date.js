@@ -94,16 +94,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const translationData = {
   en: {
-    about: "About",
-    our_story: "Our Story",
+    about: "Museum History",
+    Archaeological: "Archaeological groups",
     mission_vision: "Mission & Vision",
-    team: "Team",
+    Unique_pieces: "Unique pieces",
+
+    team: "Museum management",
     tours: "Tourist",
     popular_tours: "Popular Tours",
     book_trip: "Book a Trip",
     guidelines: "Guidelines",
     home: "Home",
-    history: "History",
+    history: "Museum History",
     ancient_egypt: "Ancient Egypt",
     pharaohs: "Pharaohs",
     museum_name: "The Grand Egyptian Museum",
@@ -111,6 +113,19 @@ const translationData = {
       "A journey through time to explore the greatest civilizations in history",
     discover_more: "Discover More",
     about_the_museum: "About the Museum",
+    history_of_museum: "History of the Grand Egyptian Museum",
+    museum_history:
+      "The Grand Egyptian Museum project was announced in 2002 to be the largest archaeological museum in the world. It aims to accommodate and display over 100,000 artifacts, including the complete collection of Tutankhamun.",
+    museum_design:
+      "The museum features modern architectural design inspired by ancient Egyptian civilization and is a new gateway for discovering the secrets of the pharaohs in an interactive and advanced way.",
+    museum_inauguration:
+      "The museum's grand opening was scheduled for 2022, marking a major milestone in the preservation and exhibition of Egypt's rich heritage. It is expected to attract millions of visitors each year, contributing significantly to the country's tourism and cultural sectors.",
+    museum_exhibitions:
+      "The museum will house not only the priceless treasures of Tutankhamun but also numerous other exhibits that highlight Egypt's ancient civilization, ranging from monumental statues to intricate jewelry, and offering a deep dive into the world of the pharaohs, their culture, and their lasting impact on modern civilization.",
+    museum_technology:
+      "The Grand Egyptian Museum integrates cutting-edge technology in its design, with features like virtual tours, interactive displays, and advanced preservation methods to ensure the longevity and accessibility of its exhibits. The museum’s design incorporates sustainable and energy-efficient elements, positioning it as a model for future cultural institutions.",
+    museum_impact:
+      "This monumental project is expected to enhance Egypt's position as a leading cultural and tourist destination, highlighting the global significance of Egyptian history. It is a landmark project that brings Egypt's ancient heritage to the world while ensuring its preservation for future generations.",
     museum_info:
       "The Grand Egyptian Museum is the largest archaeological museum in the world dedicated to a single civilization. It is located near the Pyramids of Giza and houses a massive collection of Egyptian artifacts, including the treasures of Tutankhamun.",
     museum_construction:
@@ -143,22 +158,37 @@ const translationData = {
     developed_by: "© Developed by Abdullah Hani",
   },
   ar: {
-    about: "حول",
-    our_story: "قصتنا",
+    about: " تاريخ المتحف",
+    Archaeological: "المجموعات الاثرية",
     mission_vision: "الرسالة والرؤية",
-    team: "فريق العمل",
+    team: " ادارة المتحف",
+    Unique_pieces: "القطع الفريدة",
+
     tours: "السياحة",
     popular_tours: "الجولات المشهورة",
     book_trip: "احجز رحلة",
     guidelines: "إرشادات",
     home: "الرئيسية",
-    history: "التاريخ",
+    history: "تاريخ المتحف",
     ancient_egypt: "مصر القديمة",
     pharaohs: "الفراعنة",
     museum_name: "المتحف المصري الكبير",
     journey_text: "رحلة عبر الزمن لاستكشاف أعظم الحضارات في التاريخ",
     discover_more: "اكتشف المزيد",
     about_the_museum: "حول المتحف",
+    history_of_museum: "تاريخ المتحف المصري الكبير",
+    museum_history:
+      "تم الإعلان عن مشروع المتحف المصري الكبير في عام 2002 ليكون أكبر متحف أثري في العالم. يهدف المتحف إلى استيعاب وعرض أكثر من 100,000 قطعة أثرية، بما في ذلك المجموعة الكاملة لتوت عنخ آمون.",
+    museum_design:
+      "يتميز المتحف بتصميم معماري عصري مستوحى من الحضارة المصرية القديمة وهو بوابة جديدة لاكتشاف أسرار الفراعنة بطريقة تفاعلية ومتقدمة.",
+    museum_inauguration:
+      "كان من المقرر افتتاح المتحف الكبير في عام 2022، مما يمثل معلمًا هامًا في الحفاظ على التراث المصري وعرضه. من المتوقع أن يجذب المتحف ملايين الزوار سنويًا، مما يساهم بشكل كبير في قطاعات السياحة والثقافة في البلاد.",
+    museum_exhibitions:
+      "سيضم المتحف ليس فقط الكنوز الثمينة لتوت عنخ آمون، بل العديد من المعروضات الأخرى التي تسلط الضوء على حضارة مصر القديمة، بدءًا من التماثيل الضخمة إلى المجوهرات المعقدة، ويقدم غمرًا في عالم الفراعنة، ثقافتهم، وتأثيرهم المستمر على الحضارة الحديثة.",
+    museum_technology:
+      "يدمج المتحف المصري الكبير تكنولوجيا متقدمة في تصميمه، مع ميزات مثل الجولات الافتراضية والعروض التفاعلية وطرق الحفظ المتقدمة لضمان ديمومة المعروضات وسهولة الوصول إليها. يتضمن تصميم المتحف عناصر مستدامة وموفرة للطاقة، مما يجعله نموذجًا للمؤسسات الثقافية المستقبلية.",
+    museum_impact:
+      "من المتوقع أن يعزز هذا المشروع الضخم مكانة مصر كوجهة ثقافية وسياحية رائدة، ويسلط الضوء على الأهمية العالمية للتاريخ المصري. إنه مشروع معلم يجلب التراث المصري القديم إلى العالم بينما يضمن الحفاظ عليه للأجيال القادمة.",
     museum_info:
       "المتحف المصري الكبير هو أكبر متحف أثري في العالم مخصص لحضارة واحدة. يقع بالقرب من أهرامات الجيزة ويضم مجموعة ضخمة من القطع الأثرية المصرية، بما في ذلك كنوز توت عنخ آمون.",
     museum_construction:
@@ -195,7 +225,7 @@ const translationData = {
 
 // 🔹 Set Language Direction (RTL or LTR)
 function setDirection(lang) {
-  if (lang === "ar") {
+  if (lang === "en") {
     document.documentElement.lang = "ar";
     document.body.dir = "rtl";
   } else {
@@ -205,6 +235,7 @@ function setDirection(lang) {
 }
 
 // 🔹 Translate Page Content
+
 function translatePage(lang) {
   setDirection(lang);
   const elementsToTranslate = document.querySelectorAll("[data-translate]");

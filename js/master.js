@@ -1,5 +1,4 @@
 // 🔹 Sidebar Menu Toggle
-
 const toggleMenu = document.querySelector(".toggle-menu");
 const navLinks = document.querySelector(".nav-links");
 const navItems = document.querySelectorAll(".nav-links li");
@@ -40,6 +39,30 @@ dropdownToggles.forEach((toggle) => {
   });
 });
 
+// 🔹 Intersection Observer for Scroll Animation
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible"); // Add the class to trigger animation
+        observer.unobserve(entry.target); // Stop observing after the element becomes visible
+      }
+    });
+  },
+  {
+    threshold: 0.5, // When 50% of the element is visible in the screen
+  }
+);
+
+// Select all elements you want to animate on scroll
+const animatedElements = document.querySelectorAll(".animate-on-scroll");
+
+// Observe the elements
+animatedElements.forEach((element) => {
+  observer.observe(element);
+});
+
+// Close dropdown when clicking outside
 document.addEventListener("click", (event) => {
   document.querySelectorAll(".dropdown-menu.active").forEach((menu) => {
     if (!menu.contains(event.target)) {
@@ -50,11 +73,10 @@ document.addEventListener("click", (event) => {
 });
 
 // 🔹 Hero Section Image Slider
-
 const images = [
   "./image/sliders_ar1739101249Banner AR.jpg",
   "./image/هدية.jpg",
-  "./image/متحف11.jpg",
+  "./image/اكثر من 100.000 قطعة اثرية.png",
 ];
 
 const heroSection = document.querySelector(".landing");
@@ -146,33 +168,33 @@ startAutoSlide();
 rightArrow.addEventListener("click", nextSlide);
 leftArrow.addEventListener("click", prevSlide);
 
-// 🔹 Scroll Animation
-
+// 🔹 Scroll Animation for Stat Boxes
 const observerOptions = { root: null, rootMargin: "0px", threshold: 0.2 };
 
 function handleIntersection(entries, observer) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+      entry.target.classList.add("show"); // Add the class to trigger the animation
 
       if (entry.target.classList.contains("number")) {
         animateCounter(entry.target);
       }
 
-      observer.unobserve(entry.target);
+      observer.unobserve(entry.target); // Stop observing the element after it's visible
     }
   });
 }
 
-const observer = new IntersectionObserver(handleIntersection, observerOptions);
+const observerStats = new IntersectionObserver(
+  handleIntersection,
+  observerOptions
+);
 
 document
   .querySelectorAll(".stat-box, .box-content .box, .number")
   .forEach((box) => {
-    observer.observe(box);
+    observerStats.observe(box);
   });
-
-// 🔹 Counter Animation
 
 function animateCounter(element, duration = 2000) {
   const target = +element.textContent.replace(/[^0-9]/g, "");
@@ -192,8 +214,6 @@ function animateCounter(element, duration = 2000) {
 
   update();
 }
-
-// 🔹 Language Translation
 
 const translations = {
   en: {
@@ -231,16 +251,16 @@ const translations = {
     your_message: "Your Message",
     developed_by: "© Developed by Abdullah Hani",
     about: "About",
-    our_story: "Our Story",
+    history: "Museum History",
     mission_vision: "Mission & Vision",
-    team: "Team",
+    team: "Museum management",
     tours: "Tourist",
     popular_tours: "Popular Tours",
     book_trip: "Book a Trip",
     guidelines: "Guidelines",
     home: "Home",
-    history: "History",
-    museum_history: "Museum History",
+    Archaeological: "Archaeological groups",
+    Unique_pieces: "Unique pieces",
     great_kings: "The Great Kings of Egypt",
     guided_tours: "Guided Tours",
     guided_tours_info: "Explore the museum with expert Egyptologists",
@@ -251,6 +271,14 @@ const translations = {
     virtual_tours: "Virtual Reality Tours",
     virtual_tours_info:
       "Experience ancient Egypt through immersive VR technology",
+    // Add the new translations here:
+    about_image_alt: "Inside the museum",
+    about_title: "About the Grand Egyptian Museum",
+    about_paragraph1:
+      "The Grand Egyptian Museum is a gateway to the rich and timeless history of Ancient Egypt. Located near the Giza Pyramids, it houses thousands of artifacts, including the complete collection of King Tutankhamun.",
+    about_paragraph2:
+      "With cutting-edge architecture and immersive exhibits, the museum offers visitors a unique journey through time.",
+    about_button: "Explore Tours",
   },
   ar: {
     largest_museum: "أكبر متحف أثري",
@@ -287,16 +315,16 @@ const translations = {
     your_message: "رسالتك",
     developed_by: "© تم التطوير بواسطة عبدالله هاني",
     about: "عن المتحف",
-    our_story: "قصتنا",
+    history: "تاريخ المتحف ",
     mission_vision: "المهمة والرؤية",
-    team: "الفريق",
+    team: "ادارة المتحف",
     tours: "السياحة",
     popular_tours: "الجولات المشهورة",
     book_trip: "احجز رحلة",
     guidelines: "إرشادات",
     home: "الرئيسية",
-    history: "التاريخ",
-    museum_history: "تاريخ المتحف",
+    Archaeological: "المجموعات الاثرية",
+    Unique_pieces: " القطع الفريدة",
     great_kings: "الملوك العظام في مصر",
     guided_tours: "الجولات الإرشادية",
     guided_tours_info: "اكتشف المتحف مع علماء المصريات الخبراء",
@@ -307,11 +335,31 @@ const translations = {
     virtual_tours: "الجولات باستخدام الواقع الافتراضي",
     virtual_tours_info:
       "استمتع بتجربة مصر القديمة من خلال تكنولوجيا الواقع الافتراضي",
+    // Add the new translations here:
+    about_image_alt: "داخل المتحف",
+    about_title: "عن المتحف المصري الكبير",
+    about_paragraph1:
+      "المتحف المصري الكبير هو بوابة لاستكشاف تاريخ مصر القديمة الغني والخالد. يقع بالقرب من أهرامات الجيزة ويضم آلاف القطع الأثرية، بما في ذلك المجموعة الكاملة للملك توت عنخ آمون.",
+    about_paragraph2:
+      "مع الهندسة المعمارية الحديثة والمعروضات التفاعلية، يقدم المتحف للزوار رحلة فريدة عبر الزمن.",
+    about_button: "استكشف الجولات",
   },
 };
 
 let currentLanguage = "en";
 
+// Function to set language direction (LTR or RTL)
+function setDirection(language) {
+  if (language === "en") {
+    document.documentElement.lang = "ar";
+    document.body.dir = "rtl";
+  } else {
+    document.documentElement.lang = "en";
+    document.body.dir = "ltr";
+  }
+}
+
+// Function to translate the page content
 function translatePage(language) {
   const elements = document.querySelectorAll("[data-translate]");
   elements.forEach((element) => {
@@ -320,8 +368,12 @@ function translatePage(language) {
       element.textContent = translations[language][key];
     }
   });
+
+  // Change the direction of text based on the language
+  setDirection(language);
 }
 
+// Event listener for language change
 const langButtons = document.querySelectorAll(".lang-btn");
 
 langButtons.forEach((button) => {
@@ -332,6 +384,7 @@ langButtons.forEach((button) => {
   });
 });
 
+// Initial language setup on load
 window.addEventListener("load", () => {
   translatePage(currentLanguage);
 });

@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="./css/master.css" />
     <link rel="stylesheet" href="./css/normalize.css" />
 
-    <!-- إضافة اللوجو كـ favicon -->
     <link rel="icon" href="./image/logo المتحف المصري.ai" type="image/png" />
   </head>
   <body>
@@ -34,21 +33,33 @@
           <i class="fa-solid fa-bars toggle-menu"></i>
           <ul class="nav-links">
             <li class="dropdown">
-              <a href="#" data-translate="about">About</a>
-              <button class="dropdown-toggle">▼</button>
+              <button class="dropdown-toggle" data-translate="about">
+                About
+              </button>
               <ul class="dropdown-menu">
-                <li><a href="#" data-translate="our_story">Our Story</a></li>
                 <li>
-                  <a href="#" data-translate="mission_vision"
+                  <a href="./date.html" data-translate="history"
+                    >Museum History</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./Mission&Vision.html"
+                    data-translate="mission_vision"
                     >Mission & Vision</a
                   >
                 </li>
-                <li><a href="#" data-translate="team">Team</a></li>
+                <li>
+                  <a href="./team.html" data-translate="team"
+                    >Museum management
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" data-translate="tours">Tourist</a>
-              <button class="dropdown-toggle">▼</button>
+              <button class="dropdown-toggle" data-translate="tours">
+                Tourist
+              </button>
               <ul class="dropdown-menu">
                 <li>
                   <a href="Tour.html" data-translate="popular_tours"
@@ -73,12 +84,13 @@
               >
             </li>
             <li class="dropdown">
-              <a href="#" data-translate="history">History</a>
-              <button class="dropdown-toggle">▼</button>
+              <button class="dropdown-toggle" data-translate="Archaeological">
+                Archaeological groups
+              </button>
               <ul class="dropdown-menu">
                 <li>
-                  <a href="./date.html" data-translate="museum_history"
-                    >Museum History</a
+                  <a href="./Uniquepieces.html" data-translate="Unique_pieces"
+                    >Unique pieces</a
                   >
                 </li>
                 <li>
@@ -102,11 +114,49 @@
     <section class="landing">
       <div class="container"></div>
       <div class="arrow left-arrow">&#10094;</div>
+      <div
+        class="scroll-down"
+        onclick="document.querySelector('#next').scrollIntoView({ behavior: 'smooth' });"
+      >
+        <i class="fa-solid fa-angles-down"></i>
+      </div>
+
       <div class="arrow right-arrow">&#10095;</div>
       <ul class="bullets"></ul>
     </section>
+    <section class="about-section" id="next">
+      <div class="container">
+        <div class="about-image animate-on-scroll">
+          <img
+            src="image/اللوبي.jpg"
+            alt="Inside the museum"
+            data-translate="about_image_alt"
+          />
+        </div>
+        <div class="about-content animate-on-scroll">
+          <h2 data-translate="about_title">About the Grand Egyptian Museum</h2>
+          <p data-translate="about_paragraph1">
+            The Grand Egyptian Museum is a gateway to the rich and timeless
+            history of Ancient Egypt. Located near the Giza Pyramids, it houses
+            thousands of artifacts, including the complete collection of King
+            Tutankhamun.
+          </p>
+          <p data-translate="about_paragraph2">
+            With cutting-edge architecture and immersive exhibits, the museum
+            offers visitors a unique journey through time.
+          </p>
+          <a
+            href="./Tour.html"
+            target="_blank"
+            class="about-btn"
+            data-translate="about_button"
+            >Explore Tours</a
+          >
+        </div>
+      </div>
+    </section>
 
-    <div class="section1" id="next">
+    <div class="section1">
       <div class="container">
         <div class="box-cont">
           <div class="box">
@@ -139,7 +189,7 @@
             <iframe
               width="100%"
               height="330px"
-              src="https://www.youtube.com/embed/o1Lr3V4HPFo"
+              src="https://www.youtube.com/embed/r-qeP51pOms"
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen

@@ -63,7 +63,7 @@ ul {
 /* Variables */
 :root {
   --main-color: #ffd700;
-  --transparent-color: rgba(255, 217, 0, 0.075);
+  --transparent-color: rgba(0, 0, 0, 0.842);
   --section-padding: 100px;
   --text-shadow: 5px 5px 5px rgba(255, 215, 0, 0.7);
 }
@@ -126,7 +126,7 @@ header {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.658);
+  background: var(--transparent-color);
   list-style: none;
   padding: 10px;
   margin: 0;

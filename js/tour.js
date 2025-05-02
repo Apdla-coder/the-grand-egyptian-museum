@@ -52,16 +52,16 @@ document.addEventListener("click", function (event) {
 const translations = {
   en: {
     about: "About",
-    our_story: "Our Story",
+    Archaeological: "Archaeological groups",
     mission_vision: "Mission & Vision",
-    team: "Team",
+    team: "Museum management",
     tours: "Tourist",
+    Unique_pieces: "Unique pieces",
     popular_tours: "Popular Tours",
     book_trip: "Book a Trip",
     guidelines: "Guidelines",
     home: "Home",
-    history: "HISTORY",
-    museum_history: "Museum History",
+    history: "Museum History",
     great_kings: "The great kings of Egypt",
     book_tickets: "Popular Tours",
     royal_title: "Royal Treasures Tour",
@@ -88,15 +88,17 @@ const translations = {
   },
   ar: {
     about: "عن المتحف",
-    our_story: "قصتنا",
+    Archaeological: "المجموعات الاثرية",
     mission_vision: "الرؤية والرسالة",
-    team: "الفريق",
+    team: "ادارة المتحف",
     tours: "جولات سياحية",
+    Unique_pieces: "القطع الفريدة",
+
     popular_tours: "جولات شهيرة",
     book_trip: "احجز رحلة",
     guidelines: "الإرشادات",
     home: "الرئيسية",
-    history: "التاريخ",
+    history: "تاريخ المتحف",
     museum_history: "تاريخ المتحف",
     great_kings: "ملوك مصر العظماء",
     book_tickets: "الجولات الشهيرة",
@@ -122,6 +124,16 @@ const translations = {
 
 const languageButtons = document.querySelectorAll(".lang-btn");
 
+function setDirection(lang) {
+  if (lang === "en") {
+    document.documentElement.lang = "ar";
+    document.body.dir = "rtl";
+  } else {
+    document.documentElement.lang = "en";
+    document.body.dir = "ltr";
+  }
+}
+
 function setLanguage(lang) {
   const elements = document.querySelectorAll("[data-translate]");
   elements.forEach((el) => {
@@ -131,11 +143,12 @@ function setLanguage(lang) {
     }
   });
   localStorage.setItem("language", lang);
+  setDirection(lang); // Update direction when language is changed
 }
 
 // Check saved language on load
 document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("language") || "en"; // تغيير القيمة الافتراضية إلى الإنجليزية
+  const savedLang = localStorage.getItem("language") || "en"; // default to English if no language saved
   setLanguage(savedLang);
 });
 
@@ -146,4 +159,3 @@ languageButtons.forEach((btn) => {
     setLanguage(selectedLang);
   });
 });
-

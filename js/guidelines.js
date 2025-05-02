@@ -138,21 +138,64 @@ const translations = {
   },
 };
 
-function translatePage(language) {
+let currentLang = "en";
+
+// Function to set language direction (LTR or RTL)
+function setDirection(lang) {
+  if (lang === "en") {
+    document.documentElement.lang = "ar";
+    document.body.dir = "rtl";
+  } else {
+    document.documentElement.lang = "en";
+    document.body.dir = "ltr";
+  }
+}
+
+function translatePage(lang) {
   const elements = document.querySelectorAll("[data-translate]");
   elements.forEach((element) => {
     const key = element.getAttribute("data-translate");
-    if (translations[language][key]) {
-      element.textContent = translations[language][key];
+    if (translations[lang] && translations[lang][key]) {
+      element.innerText = translations[lang][key];
     }
   });
+
+  // Set the page direction based on selected language
+  setDirection(lang);
 }
 
+// Language buttons event listeners
 document.querySelectorAll(".lang-btn").forEach((button) => {
-  button.addEventListener("click", () => {
-    const lang = button.getAttribute("data-lang");
-    translatePage(lang);
+  button.addEventListener("click", (e) => {
+    currentLang = e.target.getAttribute("data-lang");
+    translatePage(currentLang);
   });
 });
 
-translatePage("en");
+// Initial language translation
+translatePage(currentLang);
+
+// Booking functionality
+const bookBtn = document.getElementById("bookBtn");
+const confirmationBox = document.getElementById("confirmationBox");
+const bookingNumberEl = document.getElementById("bookingNumber");
+const visitDateDisplay = document.getElementById("visitDateDisplay");
+const ticketTypeDisplay = document.getElementById("ticketTypeDisplay");
+const userNameDisplay = document.getElementById("userNameDisplay"); // <== جديد
+
+if (bookBtn) {
+  bookBtn.addEventListener("click", function () {
+    const bookingNumber = "EG" + Math.floor(100000 + Math.random() * 900000);
+    const visitDate = document.getElementById("date").value;
+    const ticketType = document.getElementById("ticket-type").value;
+    const userName = document.getElementById("name").value; // <== جديد
+
+    bookingNumberEl.textContent = bookingNumber;
+    visitDateDisplay.textContent = visitDate;
+    ticketTypeDisplay.textContent =
+      ticketType.charAt(0).toUpperCase() + ticketType.slice(1);
+    userNameDisplay.textContent = userName; // <== جديد
+
+    confirmationBox.style.display = "block";
+  });
+}
