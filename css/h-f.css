@@ -7,9 +7,7 @@ body {
   color: black;
   position: relative;
 }
-a {
-  text-decoration: none;
-}
+
 * {
   margin: 0;
   padding: 0;
@@ -47,31 +45,27 @@ ul {
 
 /* ========== Header Styling ========== */
 header {
-  background-image: url(../image/929554-الدرج-العظيم-بالمتحف-الكبير.webp);
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--transparent-color);
+  z-index: 1000;
+  padding: 10px 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  color: white;
-  position: relative;
+  justify-content: space-between;
 }
 
 /* Navbar */
 .navbar {
   width: 100%;
+  max-width: 1400px;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: var(--transparent-color);
+  padding: 0 20px;
 }
 
 /* Logo */
@@ -126,11 +120,11 @@ header {
 }
 
 .nav-links a:hover {
-  background: rgba(255, 215, 0, 0.2);
   color: white;
   text-shadow: var(--text-shadow);
 }
 
+/* Dropdown */
 /* ========== Dropdown Toggle Button "▼" ========== */
 .dropdown-toggle {
   background: none;
@@ -209,11 +203,31 @@ header {
   background: var(--main-color);
   color: black;
 }
+/* hero-section */
+.hero-section {
+  position: relative;
+  background: url("../image/فورم.png") no-repeat center center/cover;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.4); /* تغطية شفافة */
+  padding: 20px;
+  border-radius: 10px;
+}
 
 .scroll-down {
   text-align: center;
   margin-top: 20px;
   animation: bounce 2s infinite;
+  position: absolute;
+  top: 60%;
 }
 
 .scroll-down i {
@@ -244,8 +258,6 @@ header {
   padding: 20px;
   border-radius: 10px;
   position: relative;
-  width: fit-content;
-  margin: auto;
 }
 
 .hero-overlay h1 {
@@ -253,96 +265,52 @@ header {
   font-weight: bold;
 }
 
-.btn {
-  display: inline-block;
-  background: #ffcc00;
-  color: black;
-  padding: 10px 20px;
-  margin-top: 10px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+/* CSS */
+.info-section {
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+  padding-bottom: var(--section-padding);
+  padding-top: var(--section-padding);
 }
 
-.btn:hover {
-  background: #ffaa00;
-}
-
-/* end landing */
-/* Section Styles */
-.kings {
-  position: relative;
+.info-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 40px;
-  padding: 50px 20px;
-  background-image: url(../image/ff.png);
-  background-position: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-direction: row-reverse;
+  gap: 20px;
 }
-.kings::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.sz {
+  font-size: 40px;
+}
+.info-image img {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.658);
-}
-.king-section {
-  width: 400px;
-  height: 400px;
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.178);
-  border: 2px solid goldenrod;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-.king-section:hover {
-  transform: scale(1.03);
+.info-image {
+  width: 30%;
 }
-
-.king-image {
+.info-text {
+  max-width: 600px;
   text-align: center;
 }
 
-.king-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  right: 0;
-  padding: 15px;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.85);
-  opacity: 0; /* Hide the rest initially */
-  visibility: hidden; /* Hide the rest initially */
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+.info-text h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: var(--main-color);
 }
 
-.king-section h2 {
-  text-align: center;
-  margin: 10px 0;
-  font-size: 22px;
-  color: #ddd;
-  opacity: 1; /* Ensure the title is always visible */
-}
-
-.king-info p {
-  font-size: 14px;
-  margin: 5px 0;
+.info-text p {
+  font-size: 18px;
   line-height: 1.6;
+  color: #333;
 }
 
-/* Show the rest of the info when hovering */
-.king-section:hover .king-info {
-  opacity: 1;
-  visibility: visible;
-}
 /* footer  */
 footer {
   background-image: url(../image/929554-الدرج-العظيم-بالمتحف-الكبير.webp);
@@ -515,8 +483,9 @@ footer .footer-developed {
     display: none;
     position: absolute;
     right: 0;
-    top: 35px;
+    top: 15px;
   }
+
   .stats .container {
     flex-direction: column;
   }
@@ -573,27 +542,34 @@ footer .footer-developed {
 /* 🔸 Mobile (max-width: 767px) */
 @media (max-width: 767px) {
   .landing {
-    height: 40vh;
+    height: 30vh;
+  }
+  .scroll-down i {
+    display: none;
   }
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     position: absolute;
-    left: 50%; /* تعديل لجعل القائمة في المنتصف */
+    left: 50%;
     top: 110%;
     background: rgb(0 0 0 / 48%);
     padding: 15px 0;
     text-align: center;
-    z-index: 1111;
+    z-index: 999;
     border-radius: 10%;
-    transform: translateX(-50%); /* لتوسيط العنصر */
+    transform: translateX(-50%);
   }
   .nav-links.active {
     display: flex;
-    width: 50%; /* تعديل لتناسب الشاشة بشكل أفضل */
+
+    width: 60%;
     left: 78%;
-    transform: translateX(-50%); /* لتوسيط القائمة النشطة */
+    transform: translateX(-50%);
+  }
+  .language-switch {
+    left: 0;
   }
   .toggle-menu {
     display: block;
@@ -617,9 +593,9 @@ footer .footer-developed {
     text-align: center;
   }
   .box-content .box {
-    width: 45%; /* زيادة العرض لجعل المربعات أكثر وضوحاً */
+    width: 45%;
     height: auto;
-    margin-bottom: 20px; /* إضافة مسافة بين المربعات */
+    margin-bottom: 20px;
   }
   .section1 {
     padding-bottom: 0;
@@ -641,11 +617,9 @@ footer .footer-developed {
 /* 🔸 Tablet (375px - 1050px) */
 @media (min-width: 768px) and (max-width: 1200px) {
   .container {
-    width: 90%;
+    width: 100%;
   }
-  .nav-links {
-    gap: 10px;
-  }
+
   .box-content .box {
     width: 20%;
     height: auto;
@@ -673,12 +647,8 @@ footer .footer-developed {
 /* 🔸 Large Screens (1200px and above) */
 @media (min-width: 1200px) {
   .container {
-    width: 85%;
+    width: 100%;
     max-width: 1400px;
     margin: auto;
-  }
-
-  .nav-links {
-    gap: 50px;
   }
 }
