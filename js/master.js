@@ -235,7 +235,7 @@ const translations = {
     kids_museum: "Kid's Museum",
     book_ticket: "Book A Ticket",
     museum_store: "Museum Store",
-    virtual_tour: "Virtual Tour",
+    virtual_tour: "Tutankhamun Hall",
     museum_location: "Museum Location",
     museum_description:
       "The Grand Egyptian Museum (GEM) is one of the most significant cultural landmarks in Egypt. Located near the Giza Pyramids, it is set to be the largest archaeological museum in the world, showcasing the treasures of ancient Egypt, including the complete collection of King Tutankhamun.",
@@ -279,6 +279,7 @@ const translations = {
     about_paragraph2:
       "With cutting-edge architecture and immersive exhibits, the museum offers visitors a unique journey through time.",
     about_button: "Explore Tours",
+    location: "         our Location in the map",
   },
   ar: {
     largest_museum: "أكبر متحف أثري",
@@ -299,7 +300,7 @@ const translations = {
     kids_museum: "متحف الأطفال",
     book_ticket: "احجز تذكرتك",
     museum_store: "متجر المتحف",
-    virtual_tour: "جولة افتراضية",
+    virtual_tour: " قاعة توت عنخ آمون",
     museum_location: "موقع المتحف",
     museum_description:
       "المتحف المصري الكبير (GEM) هو واحد من أبرز المعالم الثقافية في مصر، ويقع بالقرب من أهرامات الجيزة. ومن المقرر أن يكون أكبر متحف أثري في العالم، ويعرض كنوز مصر القديمة، بما في ذلك مجموعة كاملة للملك توت عنخ آمون.",
@@ -332,10 +333,11 @@ const translations = {
     school_trips_info: "برامج خاصة للزيارات التعليمية",
     educational_tours: "الجولات التعليمية",
     educational_tours_info: "مُصممة للطلاب والعائلات والباحثين",
-    virtual_tours: "الجولات باستخدام الواقع الافتراضي",
+    virtual_tours: "   ",
     virtual_tours_info:
       "استمتع بتجربة مصر القديمة من خلال تكنولوجيا الواقع الافتراضي",
     // Add the new translations here:
+    Location: "جولة في الردهة",
     about_image_alt: "داخل المتحف",
     about_title: "عن المتحف المصري الكبير",
     about_paragraph1:
