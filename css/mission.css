@@ -359,6 +359,7 @@ header {
 .mission-vision {
   background-color: #ffffff;
   padding: 80px 20px;
+  text-align: center;
 }
 
 .mission-vision h2 {
@@ -379,18 +380,21 @@ header {
 .section-block .text {
   flex: 1;
   padding: 20px;
+  text-align: center;
 }
 
 .section-block .text h3 {
   font-size: 2rem;
   color: var(--main-color);
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .section-block .text p {
   font-size: 1.1rem;
   line-height: 1.7;
   color: #333;
+  text-align: center;
 }
 .section-block.vision .text {
   text-align: end;

@@ -270,6 +270,7 @@ header {
   padding: 4rem 2rem;
   font-family: "Arial", sans-serif;
   color: #333;
+  text-align: center;
 }
 
 .container {
@@ -285,6 +286,7 @@ header {
   text-align: center;
   margin-bottom: 3.5rem;
   position: relative;
+  text-align: center;
 }
 
 .section-title::after {
@@ -295,12 +297,14 @@ header {
   display: block;
   margin: 15px auto 0;
   border-radius: 2px;
+  text-align: center;
 }
 
 /* Each Director Block */
 .director {
   background-color: #fff;
   display: flex;
+  text-align: center;
   flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem;
@@ -318,6 +322,7 @@ header {
 /* Director Image */
 .director-image {
   width: 20%;
+  text-align: center;
   height: 300px;
   border-radius: 12px;
   object-fit: cover;
@@ -334,6 +339,7 @@ header {
   flex: 1;
   min-width: 260px;
   text-align: left;
+  text-align: center;
 }
 
 .director-info h3 {
@@ -341,18 +347,21 @@ header {
   margin-bottom: 1rem;
   color: #2a2a2a;
   font-weight: 600;
+  text-align: center;
 }
 
 .director-info p {
   font-size: 1.1rem;
   color: #666;
   line-height: 1.7;
+  text-align: center;
 }
 
 /* Achievements List */
 .achievements {
   margin-top: 1.5rem;
   padding-left: 1.8rem;
+  text-align: center;
 }
 
 .achievements li {

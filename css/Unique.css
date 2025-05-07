@@ -230,8 +230,8 @@ header {
 /* Hero section */
 .hero-section {
   position: relative;
-  background: url("../الملوك/الاواني.jpg") no-repeat top center/cover;
-  height: 100vh;
+  background: url("../الملوك/مركب.jpg") no-repeat top center/cover;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;

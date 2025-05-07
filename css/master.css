@@ -1194,7 +1194,7 @@ footer .footer-developed {
 @media (max-width: 767px) {
   .landing {
     height: 30vh;
-    top: 70px;
+    top: 69px;
   }
   .scroll-down i {
     display: none;
