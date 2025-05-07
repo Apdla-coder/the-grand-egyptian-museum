@@ -286,6 +286,7 @@ header {
 .sz {
   font-size: 40px;
 }
+
 .info-image img {
   width: 100%;
   border-radius: 15px;
@@ -544,9 +545,7 @@ footer .footer-developed {
   .landing {
     height: 30vh;
   }
-  .scroll-down i {
-    display: none;
-  }
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -565,7 +564,7 @@ footer .footer-developed {
     display: flex;
 
     width: 60%;
-    left: 78%;
+    left: 68%;
     transform: translateX(-50%);
   }
   .language-switch {
@@ -575,7 +574,12 @@ footer .footer-developed {
     display: block;
     right: 15px;
   }
-
+  .info-container {
+    flex-direction: column;
+  }
+  .info-container .info-image {
+    width: 100%;
+  }
   footer {
     padding: 20px 10px;
   }

@@ -578,11 +578,11 @@ footer .footer-developed {
     border-radius: 10%;
     transform: translateX(-50%);
   }
-
   .nav-links.active {
     display: flex;
+
     width: 60%;
-    left: 78%;
+    left: 68%;
     transform: translateX(-50%);
   }
 

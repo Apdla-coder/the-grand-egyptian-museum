@@ -660,9 +660,10 @@ footer .active {
   }
   .nav-links.active {
     display: flex;
-    width: 50%; /* تعديل لتناسب الشاشة بشكل أفضل */
-    left: 70%;
-    transform: translateX(-50%); /* لتوسيط القائمة النشطة */
+
+    width: 60%;
+    left: 68%;
+    transform: translateX(-50%);
   }
   .toggle-menu {
     display: block;

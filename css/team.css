@@ -689,8 +689,9 @@ footer .active {
 
   .nav-links.active {
     display: flex;
+
     width: 60%;
-    left: 78%;
+    left: 68%;
     transform: translateX(-50%);
   }
 
