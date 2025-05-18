@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Grand Egyptian Museum</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Papyrus&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/all.min.css" />
+
+    <link rel="stylesheet" href="./css/master.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+
+    <link rel="icon" href="./image/logo المتحف المصري.ai" type="image/png" />
+  </head>
+  <body>
+    <div class="overly"></div>
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a class="logo" href="./home.html">
+            <img
+              src="./image/photo_2025-03-18_21-31-54-removebg-preview.png"
+              width="200px"
+              alt="Museum Logo"
+            />
+          </a>
+          <i class="fa-solid fa-bars toggle-menu"></i>
+          <ul class="nav-links">
+            <li class="dropdown">
+              <button class="dropdown-toggle" data-translate="about">
+                About
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="./date.html" data-translate="history"
+                    >Museum History</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./Mission&Vision.html"
+                    data-translate="mission_vision"
+                    >Mission & Vision</a
+                  >
+                </li>
+                <li>
+                  <a href="./team.html" data-translate="team"
+                    >Museum management
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <button class="dropdown-toggle" data-translate="tours">
+                Tourist
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="Tour.html" data-translate="popular_tours"
+                    >Popular Tours</a
+                  >
+                </li>
+                <li>
+                  <a href="./teckt.html" data-translate="book_trip"
+                    >Book a Trip</a
+                  >
+                </li>
+                <li>
+                  <a href="./guidelines.html" data-translate="guidelines"
+                    >Guidelines</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown egypt-text">
+              <a href="./home.html" target="_blank" data-translate="home"
+                >Home</a
+              >
+            </li>
+            <li class="dropdown">
+              <button class="dropdown-toggle" data-translate="Archaeological">
+                Archaeological groups
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="./Uniquepieces.html" data-translate="Unique_pieces"
+                    >Unique pieces</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./The great kings of Egypt.html"
+                    data-translate="great_kings"
+                    >The Great Kings of Egypt</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <div class="language-switch">
+              <button class="lang-btn" data-lang="en">English</button>
+              <button class="lang-btn" data-lang="ar">العربية</button>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="landing">
+      <div class="container"></div>
+      <div class="arrow left-arrow">&#10094;</div>
+      <div
+        class="scroll-down"
+        onclick="document.querySelector('#next').scrollIntoView({ behavior: 'smooth' });"
+      >
+        <i class="fa-solid fa-angles-down"></i>
+      </div>
+
+      <div class="arrow right-arrow">&#10095;</div>
+      <ul class="bullets"></ul>
+    </section>
+    <section class="about-section" id="next">
+      <div class="container">
+        <div class="about-image animate-on-scroll">
+          <img
+            src="image/اللوبي.jpg"
+            alt="Inside the museum"
+            data-translate="about_image_alt"
+          />
+        </div>
+        <div class="about-content animate-on-scroll">
+          <h2 data-translate="about_title">About the Grand Egyptian Museum</h2>
+          <p data-translate="about_paragraph1">
+            The Grand Egyptian Museum is a gateway to the rich and timeless
+            history of Ancient Egypt. Located near the Giza Pyramids, it houses
+            thousands of artifacts, including the complete collection of King
+            Tutankhamun.
+          </p>
+          <p data-translate="about_paragraph2">
+            With cutting-edge architecture and immersive exhibits, the museum
+            offers visitors a unique journey through time.
+          </p>
+          <a
+            href="./Tour.html"
+            target="_blank"
+            class="about-btn"
+            data-translate="about_button"
+            >Explore Tours</a
+          >
+        </div>
+      </div>
+    </section>
+    <section
+      id="map-section"
+      style="padding: 40px 0; background-color: #f9f9f9"
+    >
+      <div style="max-width: 1000px; margin: auto; text-align: center">
+        <h2
+          data-translate="Location"
+          style="
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: gold;
+          "
+        >
+          trip in the lobby
+        </h2>
+        <div
+          style="border: 2px solid #ccc; border-radius: 12px; overflow: hidden"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1746643686672!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ25fNl94dWdF!2m2!1d29.99388848704362!2d31.1195160408276!3f53.27680401329073!4f-2.6581794476590233!5f1.9545793729916014"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <div class="section1">
+      <div class="container">
+        <div class="box-cont">
+          <div class="box">
+            <div class="stat-box1">
+              <h3 data-translate="guided_tours">Guided Tours</h3>
+              <p data-translate="guided_tours_info">
+                Explore the museum with expert Egyptologists
+              </p>
+            </div>
+            <div class="stat-box1">
+              <h3 data-translate="school_trips">School Trips</h3>
+              <p data-translate="school_trips_info">
+                Special programs for educational visits
+              </p>
+            </div>
+            <div class="stat-box1">
+              <h3 data-translate="educational_tours">Educational Tours</h3>
+              <p data-translate="educational_tours_info">
+                Designed for students, families, and researchers
+              </p>
+            </div>
+            <div class="stat-box1">
+              <h3 data-translate="virtual_tours">Virtual Reality Tours</h3>
+              <p data-translate="virtual_tours_info">
+                Experience ancient Egypt through immersive VR technology
+              </p>
+            </div>
+          </div>
+          <div class="video-box">
+            <iframe
+              width="100%"
+              height="330px"
+              src="https://www.youtube.com/embed/r-qeP51pOms"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="stats">
+      <div class="container">
+        <div class="stat-box">
+          <h3 data-translate="more_than">More than</h3>
+          <p class="number">100,000,000</p>
+          <p data-translate="visitors">Visitors since the museum opened</p>
+        </div>
+        <div class="stat-box">
+          <h3 data-translate="contains_more_than">It contains more than</h3>
+          <p class="number">100,000</p>
+          <p data-translate="unique_artifacts">Unique artifacts</p>
+        </div>
+        <div class="stat-box">
+          <h3 data-translate="area_more_than">An area of more than</h3>
+          <p class="number">10,000</p>
+          <p data-translate="square_meters">Square meters</p>
+        </div>
+        <div class="stat-box">
+          <h3 data-translate="has_more_than">It has more than</h3>
+          <p class="number">100</p>
+          <p data-translate="exhibition_halls">Exhibition halls</p>
+        </div>
+      </div>
+      <h2 class="section-title" data-translate="more_than_museum">
+        More than just a museum
+      </h2>
+    </section>
+
+    <div class="services">
+      <div class="container">
+        <div class="box-content">
+          <div class="box">
+            <img src="./image/طفل جولة.jpg" alt="Kids Museum" />
+            <h2 data-translate="kids_museum">Kid's Museum</h2>
+            <a href="./kid.html" target="_blank">
+              <button class="show-btn" data-translate="explore">
+                Go Explore!
+              </button>
+            </a>
+          </div>
+          <div class="box">
+            <img src="./image/حجز.jpeg" alt="Book Ticket" />
+            <h2 data-translate="book_ticket">Book A Ticket</h2>
+            <a href="./teckt.html" target="_blank">
+              <button class="show-btn" data-translate="explore">
+                Go Explore!
+              </button>
+            </a>
+          </div>
+          <div class="box">
+            <img src="./image/k.jpg" alt="Museum Store" />
+            <h2 data-translate="museum_store">Museum Store</h2>
+            <a href="https://konouzeg.com" target="_blank">
+              <button class="show-btn" data-translate="explore">
+                Go Explore!
+              </button>
+            </a>
+          </div>
+          <div class="box">
+            <img src="./الملوك/توت.jpg" alt="Virtual Tour" />
+            <h2 data-translate="virtual_tour">Tutankhamun Hall</h2>
+            <a
+              href="https://my.matterport.com/show/?m=85n8j312Ur4"
+              target="_blank"
+            >
+              <button class="show-btn" data-translate="explore">
+                Go Explore!
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-contact">
+      <div class="container">
+        <div class="content">
+          <div class="box1">
+            <img src="./image/المتحف.jpg" alt="Grand Egyptian Museum" />
+            <h2 data-translate="museum_location">Museum Location</h2>
+            <p data-translate="museum_description">
+              The Grand Egyptian Museum <strong>(GEM)</strong> is one of the
+              most significant cultural landmarks in Egypt. Located near the
+              Giza Pyramids, it is set to be the largest archaeological museum
+              in the world, showcasing the treasures of ancient Egypt, including
+              the complete collection of King Tutankhamun.
+            </p>
+            <p class="social-text" data-translate="follow_social_media">
+              Follow the Egyptian Museum on social media:
+            </p>
+            <div class="Social1">
+              <ul>
+                <li>
+                  <a href="https://www.facebook.com/GrandEgyptianMuseum/"
+                    ><i class="fa-brands fa-facebook" style="color: #2115d1"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/grandegyptianmuseum/"
+                    ><i
+                      class="fa-brands fa-instagram"
+                      style="color: #b91d1d"
+                    ></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.tiktok.com/@grandegyptianmuseum"
+                    ><i class="fa-brands fa-tiktok" style="color: #18191b"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <form action="">
+            <div class="main-heding">
+              <h2 data-translate="contact_us">Contact Us</h2>
+              <p data-translate="contact_text">
+                Get in touch to discover more about the treasures of history and
+                the heritage of ancient Egypt.
+              </p>
+            </div>
+            <input
+              class="main-input"
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              data-translate-placeholder="your_name"
+            />
+            <input
+              class="main-input"
+              type="email"
+              name="Mail"
+              placeholder="Your Mail"
+              data-translate-placeholder="your_mail"
+            />
+            <textarea
+              class="main-input"
+              name="message"
+              placeholder="Your Message"
+              data-translate-placeholder="your_message"
+            ></textarea>
+            <input
+              type="submit"
+              value="Send Message"
+              data-translate="send_message"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <div class="social-media">
+            <h2 data-translate="follow_us">Follow Us</h2>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/GrandEgyptianMuseum/"
+                  ><i class="fa-brands fa-facebook" style="color: #2115d1"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/grandegyptianmuseum/"
+                  ><i class="fa-brands fa-instagram" style="color: #b91d1d"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@grandegyptianmuseum"
+                  ><i class="fa-brands fa-tiktok" style="color: #ddd"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="contact-info">
+            <img src="./image/وزارة_السياحة_والآثار.png" alt="Ministry Logo" />
+          </div>
+          <div class="contact-details">
+            <h2 data-translate="call_us">Call Us</h2>
+            <ul>
+              <li><i class="fa-solid fa-phone-volume"></i> : +20235317344</li>
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:Tourism_info@easwaaqmisr.com"
+                  >: Tourism_info@easwaaqmisr.com</a
+                >
+              </li>
+              <li class="footer-developed" data-translate="developed_by">
+                © Developed by Abdullah Hani
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/user.js"></script>
+
+    <script src="./js/master.js"></script>
+    <script src="./js/slider.js"></script>
+  </body>
+</html>

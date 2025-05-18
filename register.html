@@ -1,0 +1,45 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فتح حساب جديد</title>
+    <link rel="stylesheet" href="./css/user.css" />
+  </head>
+  <body>
+    <div class="register-container">
+      <h2>فتح حساب جديد</h2>
+      <form id="register-form">
+        <div class="form-group">
+          <label for="new-username">اسم المستخدم</label>
+          <input type="text" id="new-username" name="new-username" required />
+        </div>
+        <div class="form-group">
+          <label for="new-password">كلمة المرور</label>
+          <input
+            type="password"
+            id="new-password"
+            name="new-password"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">تأكيد كلمة المرور</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            required
+          />
+        </div>
+        <button type="submit" id="register-btn">إنشاء الحساب</button>
+      </form>
+      <p id="error-message" style="color: red"></p>
+      <p>لديك حساب؟ <a href="index.html">تسجيل الدخول</a></p>
+    </div>
+
+    <script src="./js/register.js"></script>
+    <script src="./js/user.js"></script>
+  </body>
+</html>
