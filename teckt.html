@@ -317,5 +317,71 @@
       </div>
     </footer>
     <script src="./js/teckt.js"></script>
+    <script>
+      document.getElementById("bookBtn").addEventListener("click", function () {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const date = document.getElementById("date").value;
+        const ticketType = document.getElementById("ticket-type").value;
+        const quantity = document.getElementById("quantity").value;
+
+        // إنشاء رقم عشوائي للحجز
+        const bookingNumber = Math.floor(Math.random() * 1000000);
+
+        // تخزين البيانات في localStorage
+        localStorage.setItem(
+          "ticketData",
+          JSON.stringify({
+            name,
+            email,
+            phone,
+            date,
+            ticketType,
+            quantity,
+            bookingNumber,
+          })
+        );
+
+        // الانتقال إلى صفحة التذكرة
+        window.location.href = "ticket.html";
+      });
+    </script>
+    <script>
+      document.getElementById("bookBtn").addEventListener("click", function () {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const date = document.getElementById("date").value;
+        const ticketType = document.getElementById("ticket-type").value;
+        const quantity = document.getElementById("quantity").value;
+        const bookingNumber = Math.floor(Math.random() * 1000000);
+
+        const newBooking = {
+          name,
+          email,
+          phone,
+          date,
+          ticketType,
+          quantity,
+          bookingNumber,
+        };
+
+        // جلب الحجوزات السابقة إن وجدت
+        let bookings = JSON.parse(localStorage.getItem("allBookings")) || [];
+
+        // إضافة الحجز الجديد
+        bookings.push(newBooking);
+
+        // حفظ جميع الحجوزات
+        localStorage.setItem("allBookings", JSON.stringify(bookings));
+
+        // حفظ الحجز الحالي للعرض فقط
+        localStorage.setItem("ticketData", JSON.stringify(newBooking));
+
+        // تحويل المستخدم لصفحة التذكرة
+        window.location.href = "ticket.html";
+      });
+    </script>
   </body>
 </html>

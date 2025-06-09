@@ -430,5 +430,16 @@
 
     <script src="./js/master.js"></script>
     <script src="./js/slider.js"></script>
+    <script>
+      // جلب البيانات من localStorage
+      document.getElementById("mainTitle").innerText =
+        localStorage.getItem("mainTitle") ||
+        "أهلاً بكم في المتحف المصري الكبير";
+      document.getElementById("welcomeText").innerText =
+        localStorage.getItem("welcomeText") || "اكتشف تاريخ مصر العريق.";
+      document.body.style.backgroundImage = `url(${
+        localStorage.getItem("backgroundImage") || "default.jpg"
+      })`;
+    </script>
   </body>
 </html>

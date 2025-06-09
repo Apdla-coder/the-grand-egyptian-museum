@@ -1,122 +1,67 @@
+<!-- admin-login.html -->
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>لوحة التحكم</title>
-    <style>
-      body {
-        font-family: "Arial", sans-serif;
-        background-color: #f2f2f2;
-        margin: 0;
-        padding: 0;
-      }
-
-      .container {
-        max-width: 600px;
-        margin: 50px auto;
-        background: #fff;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      h2 {
-        text-align: center;
-        margin-bottom: 25px;
-        color: #333;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: bold;
-        color: #444;
-      }
-
-      input[type="text"],
-      textarea {
-        width: 100%;
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        margin-bottom: 20px;
-        box-sizing: border-box;
-      }
-
-      textarea {
-        resize: vertical;
-      }
-
-      button {
-        width: 100%;
-        padding: 12px;
-        background-color: #007bff;
-        color: white;
-        font-size: 16px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-
-      button:hover {
-        background-color: #0056b3;
-      }
-
-      .message {
-        margin-top: 20px;
-        text-align: center;
-        color: green;
-        font-weight: bold;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دخول المسؤولين</title>
+    <link rel="stylesheet" href="./css/user.css" />
   </head>
   <body>
-    <div class="container">
-      <h2>لوحة التحكم</h2>
-      <form id="dashboardForm">
-        <label for="title">العنوان:</label>
-        <input type="text" id="title" placeholder="اكتب العنوان هنا" required />
-
-        <label for="content">المحتوى:</label>
-        <textarea
-          id="content"
-          rows="6"
-          placeholder="اكتب المحتوى هنا"
-          required
-        ></textarea>
-
-        <button type="submit">حفظ المحتوى</button>
+    <div class="login-container">
+      <h2>دخول المسؤولين</h2>
+      <form id="admin-login-form">
+        <div class="form-group">
+          <label for="admin-username">اسم المستخدم</label>
+          <input
+            type="text"
+            id="admin-username"
+            name="admin-username"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="admin-password">كلمة المرور</label>
+          <input
+            type="password"
+            id="admin-password"
+            name="admin-password"
+            required
+          />
+        </div>
+        <button type="submit" id="admin-login-btn">تسجيل الدخول</button>
       </form>
 
-      <div class="message" id="successMessage"></div>
+      <p id="admin-error-message" style="color: red"></p>
+      <p><a href="index.html">الرجوع لتسجيل دخول المستخدمين</a></p>
     </div>
 
+    <script src="./js/admin.js"></script>
     <script>
-      const form = document.getElementById("dashboardForm");
-      const titleInput = document.getElementById("title");
-      const contentInput = document.getElementById("content");
-      const messageDiv = document.getElementById("successMessage");
+      // ./js/admin.js
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+      document
+        .getElementById("admin-login-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // منع إرسال النموذج بشكل افتراضي
 
-        const title = titleInput.value.trim();
-        const content = contentInput.value.trim();
+          const username = document
+            .getElementById("admin-username")
+            .value.trim();
+          const password = document
+            .getElementById("admin-password")
+            .value.trim();
+          const errorMessage = document.getElementById("admin-error-message");
 
-        if (title && content) {
-          console.log("العنوان:", title);
-          console.log("المحتوى:", content);
-          messageDiv.textContent = "✅ تم حفظ المحتوى بنجاح!";
-          form.reset();
-        } else {
-          messageDiv.textContent = "❌ يرجى ملء جميع الحقول.";
-          messageDiv.style.color = "red";
-        }
-
-        // يمكنك تخزين المحتوى في localStorage لو أردت لاحقًا
-      });
+          // تحقق من اسم المستخدم وكلمة المرور
+          if (username === "admin" && password === "123456") {
+            // لو البيانات صحيحة، نوجهه لصفحة لوحة التحكم أو أي صفحة تانية
+            window.location.href = "admin-dashboard.html";
+          } else {
+            // لو البيانات خطأ
+            errorMessage.textContent = "اسم المستخدم أو كلمة المرور غير صحيحة.";
+          }
+        });
     </script>
   </body>
 </html>
