@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <title>لوحة التحكم - القطع الأثرية</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background: #f0f0f0;
+        padding: 30px;
+        direction: rtl;
+        text-align: center;
+        color: #333;
+      }
+      h1 {
+        color: #222;
+        margin-bottom: 30px;
+      }
+      h2 {
+        color: #222;
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+      .item {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: right;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 3px 6px rgb(0 0 0 / 0.1);
+      }
+      .item h3 {
+        margin-bottom: 12px;
+        color: #0b6e4f;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
+      }
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+        resize: vertical;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #0b6e4f;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgb(11 110 79 / 0.3);
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+      }
+      button:hover {
+        background-color: #0a5b3f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>لوحة التحكم - القطع الأثرية</h1>
+
+    <h2>قطع ثلاثية الأبعاد</h2>
+    <div id="threeDSection"></div>
+
+    <h2>قطع بالصور</h2>
+    <div id="photoSection"></div>
+
+    <button onclick="saveChanges()">💾 حفظ التعديلات</button>
+
+    <script>
+      const threeDArtifacts = [
+        {
+          id: "ramses",
+          title: "تمثال رمسيس الثاني",
+          desc: "تمثال ضخم للملك رمسيس الثاني، يُعرض في بهو المتحف المصري الكبير.",
+          src: "https://sketchfab.com/models/65e163c8e9494031aa5079bb0428a7c9/embed",
+        },
+        {
+          id: "thutmose",
+          title: "تمثال تحتمس الثالث",
+          desc: "تحتمس الثالث، أحد أعظم القادة العسكريين في مصر القديمة.",
+          src: "https://sketchfab.com/models/cee76637f8934cc4924107ab74653808/embed",
+        },
+      ];
+
+      const photoArtifacts = [
+        {
+          id: "tut_mask",
+          title: "قناع توت عنخ آمون",
+          desc: "أشهر القطع الفرعونية، مصنوع من الذهب الخالص.",
+          img: "./الملوك/توت.jpg",
+        },
+        {
+          id: "ramses_statue",
+          title: "تمثال رمسيس الثاني",
+          desc: "تمثال ضخم يعكس قوة وعظمة الملك رمسيس الثاني.",
+          img: "./الملوك/رمسيس2.jpg",
+        },
+      ];
+
+      function createInput(item, prefix) {
+        return `
+          <div class="item">
+            <h3>${item.title}</h3>
+            <label>العنوان:</label>
+            <input
+              type="text"
+              id="${prefix}_title_${item.id}"
+              value="${item.title}"
+            />
+            <label>الوصف:</label>
+            <textarea id="${prefix}_desc_${item.id}" rows="4">${
+          item.desc
+        }</textarea>
+            ${
+              prefix === "3d"
+                ? `<label>رابط النموذج:</label>
+                   <input
+                     type="text"
+                     id="${prefix}_src_${item.id}"
+                     value="${item.src}"
+                   />`
+                : `<label>رابط الصورة:</label>
+                   <input
+                     type="text"
+                     id="${prefix}_img_${item.id}"
+                     value="${item.img}"
+                   />`
+            }
+          </div>
+        `;
+      }
+
+      function renderDashboard() {
+        const saved3D =
+          JSON.parse(localStorage.getItem("threeDArtifacts")) ||
+          threeDArtifacts;
+        const savedPhotos =
+          JSON.parse(localStorage.getItem("photoArtifacts")) || photoArtifacts;
+
+        document.getElementById("threeDSection").innerHTML = saved3D
+          .map((item) => createInput(item, "3d"))
+          .join("");
+        document.getElementById("photoSection").innerHTML = savedPhotos
+          .map((item) => createInput(item, "photo"))
+          .join("");
+      }
+
+      function saveChanges() {
+        const updated3D = threeDArtifacts.map((item) => ({
+          id: item.id,
+          title: document.getElementById(`3d_title_${item.id}`).value,
+          desc: document.getElementById(`3d_desc_${item.id}`).value,
+          src: document.getElementById(`3d_src_${item.id}`).value,
+        }));
+
+        const updatedPhotos = photoArtifacts.map((item) => ({
+          id: item.id,
+          title: document.getElementById(`photo_title_${item.id}`).value,
+          desc: document.getElementById(`photo_desc_${item.id}`).value,
+          img: document.getElementById(`photo_img_${item.id}`).value,
+        }));
+
+        localStorage.setItem("threeDArtifacts", JSON.stringify(updated3D));
+        localStorage.setItem("photoArtifacts", JSON.stringify(updatedPhotos));
+        alert("✅ تم حفظ التعديلات بنجاح!");
+      }
+
+      renderDashboard();
+    </script>
+  </body>
+</html>

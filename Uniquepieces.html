@@ -509,5 +509,32 @@
     <!-- JavaScript Files -->
     <script src="./js/translateu.js"></script>
     <script src="./js/Unique.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const threeDData = JSON.parse(localStorage.getItem("threeDArtifacts"));
+        if (threeDData) {
+          const cards = document.querySelectorAll(".artifact-card");
+          threeDData.forEach((item, index) => {
+            if (cards[index]) {
+              cards[index].querySelector("h3").textContent = item.title;
+              cards[index].querySelector("p").textContent = item.desc;
+              cards[index].querySelector("iframe").src = item.src;
+            }
+          });
+        }
+
+        const photoData = JSON.parse(localStorage.getItem("photoArtifacts"));
+        if (photoData) {
+          const photoCards = document.querySelectorAll(".cards-section .card");
+          photoData.forEach((item, index) => {
+            if (photoCards[index]) {
+              photoCards[index].querySelector("h3").textContent = item.title;
+              photoCards[index].querySelector("p").textContent = item.desc;
+              photoCards[index].querySelector("img").src = item.img;
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
