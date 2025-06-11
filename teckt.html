@@ -164,7 +164,8 @@
               <label for="ticket-type" data-translate="ticket_type"
                 >Ticket Type</label
               >
-              <select id="ticket-type" name="ticket-type">
+              <select id="ticket-type" name="ticket-type" required>
+                <option value="">-- Select Ticket Type --</option>
                 <option value="standard">Standard</option>
                 <option value="vip">VIP</option>
                 <option value="student">Student</option>
@@ -182,6 +183,22 @@
                 value="1"
                 required
               />
+
+              <!-- اختيار طريقة الدفع -->
+              <label for="payment-method" data-translate="payment_method"
+                >Payment Method</label
+              >
+              <select id="payment-method" name="payment-method" required>
+                <option value="">-- Select Payment Method --</option>
+                <option value="card">Credit/Debit Card</option>
+                <option value="cash">Cash on Arrival</option>
+              </select>
+
+              <!-- عرض السعر -->
+              <p
+                id="totalPrice"
+                style="color: green; font-weight: bold; margin-top: 10px"
+              ></p>
 
               <!-- زر الحجز -->
               <button type="button" data-translate="book_now" id="bookBtn">
@@ -202,7 +219,6 @@
                   padding: 20px;
                   margin-top: 20px;
                   border-radius: 10px;
-                  right: 0;
                 "
               >
                 <h3
@@ -211,27 +227,33 @@
                 >
                   Booking Confirmation
                 </h3>
-
                 <p>
                   <strong data-translate="full_name">Full Name:</strong>
                   <span id="userNameDisplay"></span>
                 </p>
-
                 <p>
                   <strong data-translate="booking_number"
                     >Booking Number:</strong
                   >
                   <span id="bookingNumber"></span>
                 </p>
-
                 <p>
                   <strong data-translate="visit_date">Visit Date:</strong>
                   <span id="visitDateDisplay"></span>
                 </p>
-
                 <p>
                   <strong data-translate="ticket_type">Ticket Type:</strong>
                   <span id="ticketTypeDisplay"></span>
+                </p>
+                <p>
+                  <strong data-translate="payment_method"
+                    >Payment Method:</strong
+                  >
+                  <span id="paymentMethodDisplay"></span>
+                </p>
+                <p>
+                  <strong>Total Price:</strong>
+                  <span id="totalPriceDisplay"></span>
                 </p>
               </div>
             </form>
@@ -267,6 +289,71 @@
         </div>
       </div>
     </section>
+
+    <script>
+      const ticketPrices = {
+        standard: 100,
+        vip: 250,
+        student: 50,
+      };
+
+      function updateTotalPrice() {
+        const ticketType = document.getElementById("ticket-type").value;
+        const quantity = parseInt(document.getElementById("quantity").value);
+        const price = ticketPrices[ticketType] || 0;
+        const total = price * quantity;
+        const priceDisplay = document.getElementById("totalPrice");
+
+        priceDisplay.innerText = ticketType ? `Total Price: $${total}` : "";
+      }
+
+      document
+        .getElementById("ticket-type")
+        .addEventListener("change", updateTotalPrice);
+      document
+        .getElementById("quantity")
+        .addEventListener("input", updateTotalPrice);
+
+      document.getElementById("bookBtn").addEventListener("click", function () {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const date = document.getElementById("date").value;
+        const ticketType = document.getElementById("ticket-type").value;
+        const quantity = parseInt(document.getElementById("quantity").value);
+        const paymentMethod = document.getElementById("payment-method").value;
+
+        if (!paymentMethod) {
+          alert("Please select a payment method.");
+          return;
+        }
+
+        const pricePerTicket = ticketPrices[ticketType] || 0;
+        const totalPrice = pricePerTicket * quantity;
+        const bookingNumber = Math.floor(Math.random() * 1000000);
+
+        const newBooking = {
+          name,
+          email,
+          phone,
+          date,
+          ticketType,
+          quantity,
+          totalPrice,
+          paymentMethod,
+          bookingNumber,
+        };
+
+        let bookings = JSON.parse(localStorage.getItem("allBookings")) || [];
+        bookings.push(newBooking);
+
+        localStorage.setItem("allBookings", JSON.stringify(bookings));
+        localStorage.setItem("ticketData", JSON.stringify(newBooking));
+
+        window.location.href = "ticket.html";
+      });
+    </script>
+
     <!-- Footer -->
     <footer>
       <div class="container">
@@ -317,71 +404,5 @@
       </div>
     </footer>
     <script src="./js/teckt.js"></script>
-    <script>
-      document.getElementById("bookBtn").addEventListener("click", function () {
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const date = document.getElementById("date").value;
-        const ticketType = document.getElementById("ticket-type").value;
-        const quantity = document.getElementById("quantity").value;
-
-        // إنشاء رقم عشوائي للحجز
-        const bookingNumber = Math.floor(Math.random() * 1000000);
-
-        // تخزين البيانات في localStorage
-        localStorage.setItem(
-          "ticketData",
-          JSON.stringify({
-            name,
-            email,
-            phone,
-            date,
-            ticketType,
-            quantity,
-            bookingNumber,
-          })
-        );
-
-        // الانتقال إلى صفحة التذكرة
-        window.location.href = "ticket.html";
-      });
-    </script>
-    <script>
-      document.getElementById("bookBtn").addEventListener("click", function () {
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const date = document.getElementById("date").value;
-        const ticketType = document.getElementById("ticket-type").value;
-        const quantity = document.getElementById("quantity").value;
-        const bookingNumber = Math.floor(Math.random() * 1000000);
-
-        const newBooking = {
-          name,
-          email,
-          phone,
-          date,
-          ticketType,
-          quantity,
-          bookingNumber,
-        };
-
-        // جلب الحجوزات السابقة إن وجدت
-        let bookings = JSON.parse(localStorage.getItem("allBookings")) || [];
-
-        // إضافة الحجز الجديد
-        bookings.push(newBooking);
-
-        // حفظ جميع الحجوزات
-        localStorage.setItem("allBookings", JSON.stringify(bookings));
-
-        // حفظ الحجز الحالي للعرض فقط
-        localStorage.setItem("ticketData", JSON.stringify(newBooking));
-
-        // تحويل المستخدم لصفحة التذكرة
-        window.location.href = "ticket.html";
-      });
-    </script>
   </body>
 </html>

@@ -505,6 +505,44 @@ header {
   flex-basis: 45%;
 }
 
+.hero-slider {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222;
+}
+
+.hero-slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 90%;
+  gap: 40px;
+}
+
+.hero-slider-text {
+  flex: 1;
+  color: #fff;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  direction: rtl; /* إذا كنت تستخدم نصوص عربية */
+}
+
+.hero-slider-image {
+  flex: 1;
+}
+
+.hero-slider-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
 /* Stats Section */
 .stats {
   background: url("../image/929554-الدرج-العظيم-بالمتحف-الكبير.webp") center /
@@ -1251,7 +1289,7 @@ footer .footer-developed {
     margin-bottom: 20px;
   }
   .section1 {
-    padding-bottom: 0;
+    padding-bottom: 100px;
   }
   .carousel {
     position: relative;

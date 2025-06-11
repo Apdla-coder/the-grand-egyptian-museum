@@ -1,89 +1,135 @@
 <!-- ticket.html -->
 <!DOCTYPE html>
 <html lang="ar">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>تذكرتك</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #f9f9f9;
-      text-align: center;
-      padding: 50px;
-    }
-    .ticket {
-      background: #222;
-      color: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      width: 90%;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    }
-    h2 {
-      color: gold;
-    }
-    p {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-    #downloadBtn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      background-color: gold;
-      color: black;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <div class="ticket" id="ticketContent">
-    <h2>🎫 تذكرتك</h2>
-    <p><strong>الاسم:</strong> <span id="userName"></span></p>
-    <p><strong>البريد الإلكتروني:</strong> <span id="userEmail"></span></p>
-    <p><strong>رقم الهاتف:</strong> <span id="userPhone"></span></p>
-    <p><strong>تاريخ الزيارة:</strong> <span id="visitDate"></span></p>
-    <p><strong>نوع التذكرة:</strong> <span id="ticketType"></span></p>
-    <p><strong>عدد التذاكر:</strong> <span id="ticketQty"></span></p>
-    <p><strong>رقم الحجز:</strong> <span id="bookingNum"></span></p>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تذكرتك</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #1c1c1c, #333);
+        color: #fff;
+        text-align: center;
+        padding: 50px;
+        margin: 0;
+      }
+      .ticket {
+        background: #222;
+        color: #fff;
+        padding: 30px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 500px;
+        margin: auto;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+        border: 2px dashed gold;
+      }
+      h2 {
+        color: gold;
+        margin-bottom: 30px;
+        font-size: 30px;
+      }
+      p {
+        font-size: 18px;
+        margin: 15px 0;
+        text-align: right;
+      }
+      strong {
+        color: #ffd700;
+      }
+      #downloadBtn {
+        margin-top: 30px;
+        padding: 12px 30px;
+        font-size: 18px;
+        border: none;
+        background-color: gold;
+        color: black;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      #downloadBtn:hover {
+        background-color: #ffcc00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ticket" id="ticketContent">
+      <h2>🎫 تذكرتك</h2>
+      <p><strong>الاسم:</strong> <span id="userName"></span></p>
+      <p><strong>البريد الإلكتروني:</strong> <span id="userEmail"></span></p>
+      <p><strong>رقم الهاتف:</strong> <span id="userPhone"></span></p>
+      <p><strong>تاريخ الزيارة:</strong> <span id="visitDate"></span></p>
+      <p><strong>نوع التذكرة:</strong> <span id="ticketType"></span></p>
+      <p><strong>عدد التذاكر:</strong> <span id="ticketQty"></span></p>
+      <p><strong>طريقة الدفع:</strong> <span id="paymentMethod"></span></p>
+      <p><strong>إجمالي السعر:</strong> <span id="totalPrice"></span> $</p>
+      <p><strong>رقم الحجز:</strong> <span id="bookingNum"></span></p>
+    </div>
 
-  <button id="downloadBtn">📥 تحميل التذكرة</button>
+    <button id="downloadBtn">📥 تحميل التذكرة</button>
 
-  <!-- تحميل مكتبة html2canvas -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- تحميل مكتبة html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
-  <script>
-    // عرض البيانات
-    const data = JSON.parse(localStorage.getItem('ticketData'));
+    <script>
+      // عرض البيانات
+      const data = JSON.parse(localStorage.getItem("ticketData"));
 
-    if (data) {
-      document.getElementById('userName').textContent = data.name;
-      document.getElementById('userEmail').textContent = data.email;
-      document.getElementById('userPhone').textContent = data.phone;
-      document.getElementById('visitDate').textContent = data.date;
-      document.getElementById('ticketType').textContent = data.ticketType;
-      document.getElementById('ticketQty').textContent = data.quantity;
-      document.getElementById('bookingNum').textContent = data.bookingNumber;
-    } else {
-      document.body.innerHTML = '<h2>لا توجد بيانات حجز</h2>';
-    }
+      if (data) {
+        document.getElementById("userName").textContent = data.name;
+        document.getElementById("userEmail").textContent = data.email;
+        document.getElementById("userPhone").textContent = data.phone;
+        document.getElementById("visitDate").textContent = data.date;
+        document.getElementById("ticketType").textContent = getTicketTypeName(
+          data.ticketType
+        );
+        document.getElementById("ticketQty").textContent = data.quantity;
+        document.getElementById("paymentMethod").textContent =
+          getPaymentMethodName(data.paymentMethod);
+        document.getElementById("totalPrice").textContent = data.totalPrice;
+        document.getElementById("bookingNum").textContent = data.bookingNumber;
+      } else {
+        document.body.innerHTML = "<h2>لا توجد بيانات حجز</h2>";
+      }
 
-    // تحميل التذكرة كصورة
-    document.getElementById('downloadBtn').addEventListener('click', function () {
-      const ticket = document.getElementById('ticketContent');
-      html2canvas(ticket).then(canvas => {
-        const link = document.createElement('a');
-        link.download = 'تذكرتي.png';
-        link.href = canvas.toDataURL();
-        link.click();
-      });
-    });
-  </script>
-</body>
+      function getTicketTypeName(type) {
+        switch (type) {
+          case "standard":
+            return "Standard";
+          case "vip":
+            return "VIP";
+          case "student":
+            return "Student";
+          default:
+            return type;
+        }
+      }
+
+      function getPaymentMethodName(method) {
+        switch (method) {
+          case "card":
+            return "بطاقة بنكية";
+          case "cash":
+            return "كاش عند الوصول";
+          default:
+            return method;
+        }
+      }
+
+      // تحميل التذكرة كصورة
+      document
+        .getElementById("downloadBtn")
+        .addEventListener("click", function () {
+          const ticket = document.getElementById("ticketContent");
+          html2canvas(ticket).then((canvas) => {
+            const link = document.createElement("a");
+            link.download = "تذكرتي.png";
+            link.href = canvas.toDataURL();
+            link.click();
+          });
+        });
+    </script>
+  </body>
 </html>

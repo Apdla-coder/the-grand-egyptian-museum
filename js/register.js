@@ -21,7 +21,7 @@ document
       localStorage.setItem("password", password);
 
       alert("تم إنشاء الحساب بنجاح!");
-      window.location.href = "user.html"; // التوجيه إلى صفحة تسجيل الدخول بعد التسجيل
+      window.location.href = "index.html"; // التوجيه إلى صفحة تسجيل الدخول بعد التسجيل
     } else {
       document.getElementById("error-message").textContent =
         "يرجى ملء جميع الحقول";
