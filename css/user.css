@@ -3,7 +3,7 @@
 /* تنسيق عام للصفحة */
 body {
   font-family: Arial, sans-serif;
-  background-image: url(../image/sing.jpg);
+  background-image: url(../image/sing\ .jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
